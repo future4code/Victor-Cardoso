@@ -1,0 +1,252 @@
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #1A1E23;
+  color: #F7FFF6;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  height: 100%;
+  min-height: calc(100vh - 200px - 100px);
+  margin: auto;
+  padding: 2rem;
+}
+
+main h2 {
+  padding: 1rem 0;
+}
+
+/* Header */
+header div {
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #576957;
+}
+
+a:hover {
+  color: #93B48B;
+}
+
+nav {
+  margin-bottom: 1rem;
+  background-color: #F7FFF6;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  font-weight: 600;
+  margin: 0 .5rem;
+  border: #576957 solid 1px;
+  border-radius: 25px;
+  padding: .7rem;
+  transition: all 0.3s;
+}
+
+nav ul li a:hover {
+  font-weight: 600;
+  margin: 0 .5rem;
+  border: #93B48B solid 1px;
+  border-radius: 25px;
+  padding: .7rem;
+  transition: all 0.3s;
+}
+
+/* Footer */
+footer {
+  height: 200px;
+  background-color: #F7FFF6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer div img {
+  margin: 1rem;
+  width: 3rem;
+  color: #F7FFF6;
+}
+
+footer h3 {
+  color: #1A1E23;
+}
+
+/* Home */
+.home {
+  margin: 2rem;
+}
+
+div.grid {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
+  grid-template-rows: repeat();
+  min-width: 100%;
+}
+
+h4 {
+  font-weight: 500;
+}
+
+.grid img {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+/* Estoque */
+table.estoque {
+  background-color: #F7FFF6;
+  color: #1A1E23;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+table.estoque tr td,th {
+  border: none;
+}
+
+table tr td,th {
+  padding-bottom: .5rem;
+  border-bottom: #93B48B solid 1px;
+}
+
+tr td {
+  padding: 1rem;
+  text-align: left;
+}
+
+main.funcionarios table tr.table-row>td {
+  padding: 1rem 0;
+}
+
+
+.table-row {
+  text-align: left;
+}
+
+#estoque-header th {
+  padding: 1rem;
+  text-align: left;
+}
+
+.estoque img {
+  max-width: 200px;
+  padding: 1rem 0;
+}
+
+/* Adicionar produto */
+form {
+  padding: 1rem 0;
+}
+
+.add-produto {
+  background-color: #F7FFF6;
+  color: #1A1E23;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 5px;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.add-produto h2 {
+  text-align: left;
+}
+.form-input {
+  margin: 1rem 0;
+}
+
+.form-input label {
+  width: 100%;
+  color: #576957;
+}
+
+.form-input input {
+  padding: .5rem;
+  margin: .5rem 0;
+  width: 100%;
+  color: #576957;
+  border: #576957 solid 1px;
+  border-radius: 5px;
+}
+
+div.form-add {
+  text-align: right;
+}
+
+div.form-add button {
+  color: #576957;
+  font-weight: 600;
+  border: #576957 solid 1px;
+  border-radius: 25px;
+  padding: .7rem;
+  transition: all 0.3s;
+}
+div.form-add button:hover {
+  color: #93B48B;
+  font-weight: 600;
+  margin: 0 .5rem;
+  border: #93B48B solid 1px;
+  border-radius: 25px;
+  padding: .7rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+/* Funcionários */
+main.funcionarios {
+  background-color: #F7FFF6;
+  color: #1A1E23;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 5px;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.funcionarios table{
+  background-color: #F7FFF6;
+  color: #1A1E23;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.funcionarios table td {
+
+}
