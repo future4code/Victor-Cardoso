@@ -1,0 +1,143 @@
+/* GERAIS */
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto',sans-serif;
+    box-sizing: border-box;
+}
+
+/* CABEÇALHO */
+header{
+    width: 100%;
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+    /* border-bottom: 1px solid #FF5C5C; */
+    /* height: 100px; */
+}
+
+header img{
+    padding-left: 1rem;
+    width: 100px;
+}
+
+nav{
+    padding-right: 5%;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    margin:  0 10px;
+    list-style: none;
+    text-decoration: none;
+    font-size: 20px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.menu-btn {
+    border-radius: 3px;
+    padding: 12px;
+    color: #f2f2f2;
+    background-color: #FF5C5C;
+    /* transition: all 0.3s ease; */
+}
+
+a.menu-btn:hover{
+    border-radius: 6px;
+    padding: 12px;
+    color: #f2f2f2;
+    background-color: #1E1E1E;
+    transition: all 0.5s ease-in-out;
+    text-decoration: none;
+}
+
+a.active{
+    border-radius: 6px;
+    padding: 12px;
+    color: #f2f2f2;
+    background-color: #1E1E1E;
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+}
+
+/* RODAPÉ */
+
+footer {
+    background-color: #1E1E1E;
+    color: #f2f2f2;
+    width: 100%;
+    padding: 3rem;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    position: static;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+footer div h3 {
+    padding-bottom: 1rem;
+}
+
+footer div a {
+    text-decoration: none;
+    color: #f2f2f2;
+    padding: .5rem 0;
+    border-radius: 3px;
+    transition: all 0.5s ease;
+}
+
+footer div a:hover{
+    border-radius: 6px;
+    padding: .5rem;
+    color: #1E1E1E;
+    background-color: #FF5C5C;
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+
+}
+
+@media screen and (max-width: 375px) {
+    main {
+        padding: 1rem 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .container {
+        margin: 0;
+    }
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav {
+        padding: 0;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        }
+}
