@@ -4,75 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="styles.css" />
     <title>Controle de Estoque</title>
   </head>
   <body>
-    <div>
-      <p>Nome da lojinha</p>
-    </div>
+    <header>
+      <nav>
+        <a href="#">fleef store</a>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="#">Estoque</a>
+          </li>
+          <li>
+            <a href="add-produto.html">Adicionar Produto</a>
+          </li>
+          <li>
+            <a href="funcionarios.html">Funcionários</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    <div>
-      <a href="index.html">Página Inicial</a>
-      <a href="#">Controle de Estoque</a>
-      <a href="add-produto.html">Adicionar Produto</a>
-      <a href="funcionarios.html">Funcionários</a>
-    </div>
+    <main>
+      <h2>Controle de Estoque</h2>
 
-    <h2>Controle de Estoque</h2>
+      <table class="estoque">
+        <tr id="estoque-header">
+          <th>Foto</th>
+          <th>Descrição</th>
+          <th>Preço (R$)</th>
+          <th>Quantidade</th>
+        </tr>
 
-    <table>
-      <tr>
-        <th>Foto</th>
-        <th>Descrição</th>
-        <th>Preço (R$)</th>
-        <th>Quantidade</th>
-      </tr>
+        <tr class="estoque-row">
+          <td>
+            <img src="img/jeans1.jpeg" alt="Jaqueta Jeans Feminina" />
+          </td>
+          <td>Jaqueta Jeans Feminina</td>
+          <td>R$100,00</td>
+          <td>4</td>
+        </tr>
 
-      <tr>
-        <td><img src="img/jeans1.jpeg" alt="Jaqueta Jeans Feminina" /></td>
-        <td>Jaqueta Jeans Feminina</td>
-        <td>R$100,00</td>
-        <td>4</td>
-      </tr>
+        <tr class="estoque-row">
+          <td>
+            <img src="img/sweater1.jpeg" alt="Sweater Feminino" />
+          </td>
+          <td>Sweater Feminino</td>
+          <td>R$120,00</td>
+          <td>4</td>
+        </tr>
 
-      <tr>
-        <td><img src="img/sweater1.jpeg" alt="Sweater Feminino" /></td>
-        <td>Sweater Feminino</td>
-        <td>R$120,00</td>
-        <td>4</td>
-      </tr>
+        <tr class="estoque-row">
+          <td>
+            <img src="img/jeans2.jpeg" alt="Jeans Masculino" />
+          </td>
+          <td>Jeans Masculino</td>
+          <td>R$100,00</td>
+          <td>3</td>
+        </tr>
 
-      <tr>
-        <td><img src="img/jeans1.jpeg" alt="Jeans Masculino" /></td>
-        <td>Jeans Masculino</td>
-        <td>R$100,00</td>
-        <td>3</td>
-      </tr>
+        <tr class="estoque-row">
+          <td>
+            <img src="img/sweater2.jpeg" alt="Sweater Masculino" />
+          </td>
+          <td>Sweater Masculino</td>
+          <td>R$120,00</td>
+          <td>3</td>
+        </tr>
 
-      <tr>
-        <td><img src="img/sweater2.jpeg" alt="Sweater Masculino" /></td>
-        <td>Sweater Masculino</td>
-        <td>R$120,00</td>
-        <td>3</td>
-      </tr>
+        <tr class="estoque-row">
+          <td>
+            <img src="img/leather1.jpeg" alt="Jaqueta de Couro Feminina" />
+          </td>
+          <td>Jaqueta de Couro Feminina</td>
+          <td>R$200,00</td>
+          <td>5</td>
+        </tr>
 
-      <tr>
-        <td><img src="img/leather1.jpeg" alt="Jaqueta de Couro Feminina" /></td>
-        <td>Jaqueta de Couro Feminina</td>
-        <td>R$200,00</td>
-        <td>5</td>
-      </tr>
+        <tr class="estoque-row">
+          <td>
+            <img src="img/leather2.jpeg" alt="Jaqueta de Couro Masculina" />
+          </td>
+          <td>Jaqueta de Couro Masculina</td>
+          <td>R$200,00</td>
+          <td>5</td>
+        </tr>
+      </table>
+    </main>
 
-      <tr>
-        <td>
-          <img src="img/leather2.jpeg" alt="Jaqueta de Couro Masculina" />
-        </td>
-        <td>Jaqueta de Couro Masculina</td>
-        <td>R$200,00</td>
-        <td>5</td>
-      </tr>
+    <footer>
+      <p>Siga-nos nas redes sociais!</p>
 
-      <!-- Crie mais uma linha desta tabela abaixo \/ -->
-    </table>
+      <div>
+        <img src="https://image.flaticon.com/icons/png/512/25/25305.png" />
+        <img src="https://image.flaticon.com/icons/png/512/25/25425.png" />
+        <img src="https://image.flaticon.com/icons/png/512/8/8800.png" />
+      </div>
+    </footer>
   </body>
 </html>
