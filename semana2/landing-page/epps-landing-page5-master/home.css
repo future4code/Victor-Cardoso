@@ -1,0 +1,91 @@
+section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 72px;
+  font-weight: 900;
+  text-align: center;
+  padding: 1rem;
+}
+
+.subtitle {
+  font-size: 24px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.call-to-action {
+  font-size: 72px;
+  font-weight: 900;
+  text-align: center;
+  padding: 1rem;
+  color: #FF5C5C;
+}
+
+.car-name {
+  text-align: center;
+}
+
+section div img {
+  max-width: 500px;
+  width: 100%;
+}
+
+section aside img {
+  max-width: 500px;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 375px) {
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  h3 {
+    padding: 1rem 0;
+  }
+
+  h1 {
+    padding: 1rem 0;
+  }
+
+  section div img {
+    width: 80%;
+  }
+
+  section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  section aside img {
+    width: 80%;
+  }
+
+  section aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .call-to-action {
+    font-size: 48px;
+    padding: 1rem 0;
+  }
+}

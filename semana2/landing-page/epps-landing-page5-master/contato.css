@@ -1,0 +1,66 @@
+.section-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 3rem 0;
+}
+form{
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form label, form legend{
+	font-size: 1rem;
+}
+
+label {
+    margin-bottom: .5rem;
+}
+
+form div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+form div div {
+    display: flex;
+    flex-direction: column;
+}
+.input-padrao{
+	margin: 0 1rem 20px 0;
+	padding: 10px;
+}
+.enviar{
+	width: 50%;
+	padding: 15px 0;
+	background-color:#FF5C5C;
+	color: white;
+	font-weight: bold;
+	font-size: 1rem;
+	border:none;
+	border-radius: 5px;
+
+}
+.enviar:hover{
+	background-color: #1E1E1E;
+
+}
+
+@media screen and (max-width: 375px){
+    form{
+        width: 80%;
+    }
+
+    form div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+}
