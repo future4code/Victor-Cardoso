@@ -42,6 +42,7 @@ switch (turnoAluno) {
     break
   case 'N':
     console.log('Boa Noite!')
+    break
   default:
     console.log('Olá!')
     break
@@ -73,5 +74,5 @@ if (ingresso < 15 && cinema === 'fantasia') {
       console.log('... com snack!')
   }
 } else {
-  console.log('Escolha outro filme :(')
+  console.log('Escolha outro filme : ')
 }
