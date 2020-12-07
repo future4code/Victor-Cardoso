@@ -15,11 +15,11 @@ let rodada = confirm('Quer iniciar uma nova rodada?')
 const carta = comprarCarta()
 let usuario
 let computador
+let pontosUsuario
+let pontosComputador
 
 usuario = []
 computador = []
-let pontosUsuario
-let pontosComputador
 
 // Checka se o usuário quer uma nova rodada
 if (rodada === true) {
