@@ -8,12 +8,12 @@
 // Exercício 3
 // a.
 
-const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+// const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 
-for (let i = 0; i < 12; i++) {
-  const numero = arrayOriginal[i]
-  console.log(numero)
-}
+// for (let i = 0; i < 12; i++) {
+//   const numero = arrayOriginal[i]
+//   console.log(numero)
+// }
 
 // b.
 // const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
@@ -47,17 +47,17 @@ for (let i = 0; i < 12; i++) {
 // }
 
 // e.
-// const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-// let maior = arrayOriginal[0]
-// let menor = arrayOriginal[0]
+const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+let maior = arrayOriginal[0]
+let menor = arrayOriginal[0]
 
-// for (let num of arrayOriginal) {
-//   if (num > maior) {
-//     maior = num
-//   }
-//   if (num < menor) {
-//     menor = num
-//   }
-//   console.log(num)
-// }
-// console.log('O maior número é ', maior, ' e o menor é ', menor)
+for (let num of arrayOriginal) {
+  if (num > maior) {
+    maior = num
+  }
+  if (num < menor) {
+    menor = num
+  }
+  console.log(num)
+}
+console.log('O maior número é ', maior, ' e o menor é ', menor)
