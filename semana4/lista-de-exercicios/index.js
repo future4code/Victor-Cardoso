@@ -165,6 +165,7 @@ Objetos são maneiras de guardar propriedades em uma variável para que a mesma 
 Podemos usar arrays quando queremos guardar diferentes dados numa mesma variável, de maneira ordenada ou não.
 Objetos podem ser utilizados quando precisamos de diferentes propriedades para uma variável, inclusive arrays podem ser propriedades de um objeto.
 */
+
 // Exercício 2
 /*
 const criaRetangulo = (lado1, lado2) => {
@@ -200,6 +201,7 @@ console.log(
 */
 
 // Exercício 4
+/*
 const pessoa = {
   nome: 'Victor',
   idade: 25,
@@ -220,8 +222,29 @@ function anonimizarPessoa(pessoaAnonima) {
 }
 anonimizarPessoa(pessoa)
 console.log(pessoa)
-
-/*
  */
 
 // Exercícios de Funções de array
+
+// Exercício 1
+const array = [
+  { nome: 'Pedro', idade: 20 },
+  { nome: 'João', idade: 10 },
+  { nome: 'Paula', idade: 12 },
+  { nome: 'Artur', idade: 89 }
+]
+// a.
+const adultos = array.filter((adulto) => {
+  if (adulto.idade >= 18) {
+    return adulto
+  }
+})
+
+console.log(adultos)
+
+// b.
+// Exercício 2
+
+// Exercício 3
+
+// Exercício 4
