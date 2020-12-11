@@ -90,7 +90,7 @@ const qualTriangulo = (a, b, c) => {
 }
 
 qualTriangulo(5, 5, 5)
-*/
+ */
 
 // Exercício 5
 /*
@@ -123,8 +123,8 @@ const recebeNumeros = (num1, num2) => {
   }
 }
 
-recebeNumeros(15, 3)
-*/
+recebeNumeros(12, 3)
+ */
 
 // Exercícios de Funções
 // Exercício 1
@@ -198,7 +198,7 @@ const filme = {
 console.log(
   `Venha assistir ao filme ${filme.título}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.elenco}`
 )
-*/
+ */
 
 // Exercício 4
 /*
@@ -221,7 +221,6 @@ function anonimizarPessoa(pessoaAnonima) {
   return console.log(pessoaAnonima)
 }
 anonimizarPessoa(pessoa)
-console.log(pessoa)
  */
 
 // Exercícios de Funções de array
@@ -315,7 +314,7 @@ const pessoas = [
   { nome: 'Artur', idade: 10, altura: 1.2 },
   { nome: 'Soter', idade: 70, altura: 1.9 }
 ]
-*/
+ */
 // a.
 /*
 const permissaoEntrada = (pessoas) => {
@@ -329,7 +328,7 @@ const permissaoEntrada = (pessoas) => {
 }
 
 permissaoEntrada(pessoas)
-*/
+ */
 
 // b.
 /*
@@ -344,9 +343,87 @@ const naoAutorizados = (pessoas) => {
 }
 
 naoAutorizados(pessoas)
-*/
+ */
 
 // Exercício 4
+const consultas = [
+  {
+    nome: 'João',
+    genero: 'masculino',
+    cancelada: true,
+    dataDaConsulta: '01/10/2019'
+  },
+  {
+    nome: 'Pedro',
+    genero: 'masculino',
+    cancelada: false,
+    dataDaConsulta: '02/10/2019'
+  },
+  {
+    nome: 'Paula',
+    genero: 'feminino',
+    cancelada: true,
+    dataDaConsulta: '03/11/2019'
+  },
+  {
+    nome: 'Márcia',
+    genero: 'feminino',
+    cancelada: false,
+    dataDaConsulta: '04/11/2019'
+  }
+]
+
+const emailConsulta = (lista) => {
+  let emails = []
+  let pronomeTratamento = ''
+  let lembrar = ''
+  let email = ''
+
+  lista.filter((paciente) => {
+    if (paciente.genero === 'masculino') {
+      pronomeTratamento = 'Sr.'
+      lembrar = 'lembrá-lo'
+    }
+    if (paciente.genero === 'feminino') {
+      pronomeTratamento = 'Sra.'
+      lembrar = 'lembrá-la'
+    }
+    if (paciente.cancelada === true) {
+      email = `Olá, ${pronomeTratamento} ${paciente.nome}. Estamos enviando esta mensagem para ${lembrar} da sua consulta no dia ${paciente.dataDaConsulta}. Por favor, acuse
+      o recebimento deste e-mail.`
+
+      emails.push(email)
+      // console.log(email)
+    }
+  })
+  return console.log('Consultas marcadas: ', emails)
+}
+
+const emailCancelados = (pacientes) => {
+  let emails = []
+  let pronomeTratamento = ''
+  let email = ''
+
+  pacientes.filter((paciente) => {
+    if (paciente.genero === 'masculino') {
+      pronomeTratamento = 'Sr.'
+    }
+    if (paciente.genero === 'feminino') {
+      pronomeTratamento = 'Sra.'
+    }
+    if (paciente.cancelada === false) {
+      email = `Olá, ${pronomeTratamento} ${paciente.nome}. Infelizmente, sua consulta marcada
+      para o dia ${paciente.dataDaConsulta} foi cancelada. Se quiser, pode entrar em
+      contato conosco para remarcá-la`
+
+      emails.push(email)
+    }
+  })
+  return console.log('Consultas canceladas: ', emails)
+}
+
+emailConsulta(consultas)
+emailCancelados(consultas)
 /*
 
 */
