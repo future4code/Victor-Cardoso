@@ -128,17 +128,62 @@ recebeNumeros(15, 3)
 
 // Exercícios de Funções
 // Exercício 1
+// const numeros = [1, 2, 5, 10, 59, 24, 18, 92, 48, 60, 13, 77]
+// const imprimeNumeros = (arrayNumeros) => {
+//   let maior = 0
+//   let menor = 0
+//   for (let i = 0; i < arrayNumeros.length; i++) {
+//     if (arrayNumeros[i] > maior) {
+//       maior = arrayNumeros[i]
+//       console.log(maior)
+//     }
+//     if (arrayNumeros[i] < menor) {
+//       menor = arrayNumeros[i]
+//       console.log(menor)
+//     }
+//   }
+//   console.log(arrayNumeros)
+//   console.log(`Maior número do array: ${maior}`)
+//   console.log(`Menor número do array: ${menor}`)
+// }
+
+// imprimeNumeros(numeros)
+
+// Exercício 2
+// const funcaoAlert = () => {
+//   alert('Hello Labenu!')
+// }
+
+// funcaoAlert()
+
+// Exercícios de Objetos
+// Exercício 1
+/*
+Objetos são maneiras de guardar propriedades em uma variável para que a mesma tenha características e dados de diferentes tipos. 
+Podemos usar arrays quando queremos guardar diferentes dados numa mesma variável, de maneira ordenada ou não.
+Objetos podem ser utilizados quando precisamos de diferentes propriedades para uma variável, inclusive arrays podem ser propriedades de um objeto.
+*/
+// Exercício 2
+/*
+ */
+const criaRetangulo = (lado1, lado2) => {
+  retangulo = {
+    largura: lado1,
+    altura: lado2,
+    perimetro: 2 * (lado1 + lado2),
+    area: lado1 * lado2
+  }
+  return console.log(retangulo)
+}
+
+criaRetangulo(10, 7)
+// Exercício 3
 /*
 
 */
+// Exercício 4
+/*
 
-// Exercício 2
-const funcaoAlert = () => {
-  alert('Hello Labenu!')
-}
-
-funcaoAlert()
-
-// Exercícios de Objetos
+*/
 
 // Exercícios de Funções de array
