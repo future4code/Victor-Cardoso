@@ -181,6 +181,7 @@ criaRetangulo(10, 7)
  */
 
 // Exercício 3
+/*
 const filme = {
   título: 'Interstellar',
   ano: 2014,
@@ -196,12 +197,31 @@ const filme = {
 console.log(
   `Venha assistir ao filme ${filme.título}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.elenco}`
 )
-/*
-
 */
+
 // Exercício 4
-/*
+const pessoa = {
+  nome: 'Victor',
+  idade: 25,
+  email: 'cpt.victor@hotmail.com',
+  endereco: 'Mogi das Cruzes'
+}
+console.log(pessoa)
 
-*/
+function anonimizarPessoa(pessoaAnonima) {
+  pessoaAnonima = pessoa
+  pessoaAnonima = {
+    nome: 'ANÔNIMO',
+    idade: 25,
+    email: 'cpt.victor@hotmail.com',
+    endereco: 'Mogi das Cruzes'
+  }
+  return console.log(pessoaAnonima)
+}
+anonimizarPessoa(pessoa)
+console.log(pessoa)
+
+/*
+ */
 
 // Exercícios de Funções de array
