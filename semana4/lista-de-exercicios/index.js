@@ -137,6 +137,8 @@ recebeNumeros(15, 3)
 //       maior = arrayNumeros[i]
 //       console.log(maior)
 //     }
+//   }
+//   for (let i = arrayNumeros.length; i >= 1; i--) {
 //     if (arrayNumeros[i] < menor) {
 //       menor = arrayNumeros[i]
 //       console.log(menor)
@@ -177,7 +179,23 @@ const criaRetangulo = (lado1, lado2) => {
 
 criaRetangulo(10, 7)
  */
+
 // Exercício 3
+const filme = {
+  título: 'Interstellar',
+  ano: 2014,
+  diretor: 'Christopher Nolan',
+  elenco: [
+    'Matthew MacConaughey',
+    'Anne Hathaway',
+    'John Lithgow',
+    'Ellen Burstyn'
+  ]
+}
+
+console.log(
+  `Venha assistir ao filme ${filme.título}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.elenco}`
+)
 /*
 
 */
