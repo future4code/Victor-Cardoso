@@ -65,9 +65,7 @@ e. !(true) && !(true) || (!false && true && true) ==> (false) && (false) || (tru
 // Exercício 3
 /*
 Não funciona por que o while loop fica infinito, é necessário um incremento a cada console.log para que o i aumente e o loop seja interrompido, além disso o loop vai imprimir sempre um número a mais do que o valor de quantidadeDeNumerosPares, então é preciso subtrair 1 a cada iteração.
-*/
-// Exercício 4
-/*
+
 const quantidadeDeNumerosPares = 5
 let i = 0
 while (i <= quantidadeDeNumerosPares - 1) {
@@ -75,6 +73,25 @@ while (i <= quantidadeDeNumerosPares - 1) {
   i++
 }
 */
+
+// Exercício 4
+/*
+const qualTriangulo = (a, b, c) => {
+  if (a === b && b === c) {
+    console.log('Triângulo Equilátero!')
+    console.log('Lado A', a, 'Lado B', b, 'Lado C', c)
+  } else if (a === b || b === c || c === a) {
+    console.log('Triângulo Isósceles!')
+    console.log('Lado A', a, 'Lado B', b, 'Lado C', c)
+  } else {
+    console.log('Triângulo Escaleno!')
+    console.log('Lado A', a, 'Lado B', b, 'Lado C', c)
+  }
+}
+
+qualTriangulo(5, 5, 5)
+*/
+
 // Exercício 5
 /*
 
