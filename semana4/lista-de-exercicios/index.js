@@ -306,6 +306,7 @@ console.log(strings(array))
 */
 
 // Exercício 3
+/*
 const pessoas = [
   { nome: 'Paula', idade: 12, altura: 1.8 },
   { nome: 'João', idade: 20, altura: 1.3 },
@@ -314,7 +315,9 @@ const pessoas = [
   { nome: 'Artur', idade: 10, altura: 1.2 },
   { nome: 'Soter', idade: 70, altura: 1.9 }
 ]
+*/
 // a.
+/*
 const permissaoEntrada = (pessoas) => {
   let pessoasComPermissao = []
   pessoas.filter((pessoa) => {
@@ -326,11 +329,10 @@ const permissaoEntrada = (pessoas) => {
 }
 
 permissaoEntrada(pessoas)
-/*
-
 */
 
 // b.
+/*
 const naoAutorizados = (pessoas) => {
   let pessoasNaoAutorizadas = []
   pessoas.filter((pessoa) => {
@@ -342,8 +344,6 @@ const naoAutorizados = (pessoas) => {
 }
 
 naoAutorizados(pessoas)
-/*
-
 */
 
 // Exercício 4
