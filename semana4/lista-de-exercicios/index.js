@@ -255,7 +255,7 @@ console.log(criancas)
 */
 
 // Exercício 2
-const array = [1, 2, 3, 4, 5, 6]
+// const array = [1, 2, 3, 4, 5, 6]
 // a.
 /*
 const dobro = (array) => {
@@ -285,6 +285,7 @@ console.log(triplo(array))
  */
 
 // c.
+/*
 const strings = (array) => {
   let arrayStrings = []
 
@@ -302,16 +303,55 @@ const strings = (array) => {
   return arrayStrings
 }
 console.log(strings(array))
+*/
+
+// Exercício 3
+const pessoas = [
+  { nome: 'Paula', idade: 12, altura: 1.8 },
+  { nome: 'João', idade: 20, altura: 1.3 },
+  { nome: 'Pedro', idade: 15, altura: 1.9 },
+  { nome: 'Luciano', idade: 22, altura: 1.8 },
+  { nome: 'Artur', idade: 10, altura: 1.2 },
+  { nome: 'Soter', idade: 70, altura: 1.9 }
+]
+// a.
+const permissaoEntrada = (pessoas) => {
+  let pessoasComPermissao = []
+  pessoas.filter((pessoa) => {
+    if (pessoa.idade > 14 && pessoa.idade < 60 && pessoa.altura > 1.5) {
+      pessoasComPermissao.push(pessoa)
+    }
+  })
+  return console.log(`Lista de autorizados: `, pessoasComPermissao)
+}
+
+permissaoEntrada(pessoas)
 /*
 
 */
 
-// Exercício 3
+// b.
+const naoAutorizados = (pessoas) => {
+  let pessoasNaoAutorizadas = []
+  pessoas.filter((pessoa) => {
+    if (pessoa.idade < 14 || (pessoa.idade > 60 && pessoa.altura > 1.5)) {
+      pessoasNaoAutorizadas.push(pessoa)
+    }
+  })
+  return console.log(`Lista de não autorizados: `, pessoasNaoAutorizadas)
+}
+
+naoAutorizados(pessoas)
 /*
 
 */
 
 // Exercício 4
+/*
+
+*/
+
+// Exercício 5
 /*
 
 */
