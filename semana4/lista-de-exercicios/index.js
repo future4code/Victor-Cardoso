@@ -233,6 +233,7 @@ const array = [
   { nome: 'Paula', idade: 12 },
   { nome: 'Artur', idade: 89 }
 ]
+/*
 // a.
 const adultos = array.filter((adulto) => {
   if (adulto.idade >= 18) {
@@ -241,10 +242,30 @@ const adultos = array.filter((adulto) => {
 })
 
 console.log(adultos)
+*/
 
 // b.
+const criancas = array.filter((crianca) => {
+  if (crianca.idade < 20) {
+    return crianca
+  }
+})
+
+console.log(criancas)
+/*
+
+*/
 // Exercício 2
+/*
+
+*/
 
 // Exercício 3
+/*
+
+*/
 
 // Exercício 4
+/*
+
+*/
