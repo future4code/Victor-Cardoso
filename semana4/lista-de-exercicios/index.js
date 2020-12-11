@@ -227,13 +227,14 @@ console.log(pessoa)
 // Exercícios de Funções de array
 
 // Exercício 1
+/*
 const array = [
   { nome: 'Pedro', idade: 20 },
   { nome: 'João', idade: 10 },
   { nome: 'Paula', idade: 12 },
   { nome: 'Artur', idade: 89 }
 ]
-/*
+
 // a.
 const adultos = array.filter((adulto) => {
   if (adulto.idade >= 18) {
@@ -242,7 +243,6 @@ const adultos = array.filter((adulto) => {
 })
 
 console.log(adultos)
-*/
 
 // b.
 const criancas = array.filter((crianca) => {
@@ -252,10 +252,56 @@ const criancas = array.filter((crianca) => {
 })
 
 console.log(criancas)
-/*
-
 */
+
 // Exercício 2
+const array = [1, 2, 3, 4, 5, 6]
+// a.
+/*
+const dobro = (array) => {
+  let arrayDobro = []
+  array.forEach((numero) => {
+    arrayDobro.push(numero * 2)
+  })
+  return arrayDobro
+}
+
+console.log(dobro(array))
+*/
+
+// b.
+/*
+const triplo = (array) => {
+  let arrayTriplo = []
+  array.map((numero) => {
+    let triplo = numero * 3
+    let string = ''
+    string = triplo.toString()
+    arrayTriplo.push(string)
+  })
+  return arrayTriplo
+}
+console.log(triplo(array))
+ */
+
+// c.
+const strings = (array) => {
+  let arrayStrings = []
+
+  array.map((numero) => {
+    let par = ''
+    let impar = ''
+    if (numero % 2 === 0) {
+      par = `${numero} é par`
+      arrayStrings.push(par)
+    } else {
+      impar = `${numero} é ímpar`
+      arrayStrings.push(impar)
+    }
+  })
+  return arrayStrings
+}
+console.log(strings(array))
 /*
 
 */
