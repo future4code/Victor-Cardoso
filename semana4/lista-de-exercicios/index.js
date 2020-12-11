@@ -93,6 +93,7 @@ qualTriangulo(5, 5, 5)
 */
 
 // Exercício 5
+/*
 const recebeNumeros = (num1, num2) => {
   let maior = 0
   if (num1 > num2) {
@@ -123,11 +124,20 @@ const recebeNumeros = (num1, num2) => {
 }
 
 recebeNumeros(15, 3)
+*/
+
+// Exercícios de Funções
+// Exercício 1
 /*
 
 */
 
-// Exercícios de Funções
+// Exercício 2
+const funcaoAlert = () => {
+  alert('Hello Labenu!')
+}
+
+funcaoAlert()
 
 // Exercícios de Objetos
 
