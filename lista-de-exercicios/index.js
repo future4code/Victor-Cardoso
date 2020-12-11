@@ -19,3 +19,19 @@ São declaradas 3 arrays, numeros, array1 e array2. Apenas a array numeros tem d
 Depois tem um for of loop de numero, da array números, checkando se cada número é par, se for par, ele dá um push na array1, se for ímpar ele dá push na array2.
 Depois imprime no console a quantidade de números de todas as arrays.
 */
+
+// Exercício 4
+/*
+É declarada uma array numeros com dados gravados, uma variável numero1 que recebe um número infinito posivito, e uma variável numero2 que recebe o valor 0.
+Depois um for of loop que percorre a array numeros e checka se o cada numero da array é menor que o valor guardado na variável numero1, se sim, a variável numero1 recebe o valor de numero. Outro if checka se o valor de cada numero é maior que o valor da variavel numero2, se sim, numero2 recebe o valor de numero.
+Por último imprime os dois valores de numero1 e numero2.
+No valor -10 acredito que o for loop seja interrompido pois numero1 só aceita números positivos.
+*/
+
+// Exercícios de Lógica de Programação
+
+// Exercícios de Funções
+
+// Exercícios de Objetos
+
+// Exercícios de Funções de array
