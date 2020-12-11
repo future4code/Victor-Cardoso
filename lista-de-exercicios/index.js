@@ -30,6 +30,21 @@ No valor -10 acredito que o for loop seja interrompido pois numero1 só aceita n
 
 // Exercícios de Lógica de Programação
 
+// Exercício 1
+const listaDezenas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+for (let dezena of listaDezenas) {
+  console.log('For of', dezena)
+}
+
+listaDezenas.forEach((dezena) => {
+  console.log('For Each', dezena)
+})
+
+listaDezenas.map((dezena) => {
+  console.log('Map', dezena)
+})
+
 // Exercícios de Funções
 
 // Exercícios de Objetos
