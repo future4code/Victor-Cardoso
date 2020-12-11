@@ -93,6 +93,36 @@ qualTriangulo(5, 5, 5)
 */
 
 // Exercício 5
+const recebeNumeros = (num1, num2) => {
+  let maior = 0
+  if (num1 > num2) {
+    maior = num1
+    console.log('O maior é: ', maior)
+  } else if (num2 > num1) {
+    maior = num2
+    console.log('O maior é: ', maior)
+  }
+
+  if (num1 % num2 === 0) {
+    console.log(`${num1} é divisível por ${num2}`)
+  } else {
+    console.log(`${num1} não é divisível por ${num2}`)
+  }
+  if (num2 % num1 === 0) {
+    console.log(`${num2} é divisível por ${num1}`)
+  } else {
+    console.log(`${num2} não é divisível por ${num1}`)
+  }
+
+  if (num1 === maior) {
+    console.log(`A diferença entre eles é ${num1 - num2}`)
+  }
+  if (num2 === maior) {
+    console.log(`A diferença entre eles é ${num2 - num1}`)
+  }
+}
+
+recebeNumeros(15, 3)
 /*
 
 */
