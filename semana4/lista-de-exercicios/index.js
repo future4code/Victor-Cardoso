@@ -165,7 +165,6 @@ Objetos podem ser utilizados quando precisamos de diferentes propriedades para u
 */
 // Exercício 2
 /*
- */
 const criaRetangulo = (lado1, lado2) => {
   retangulo = {
     largura: lado1,
@@ -177,6 +176,7 @@ const criaRetangulo = (lado1, lado2) => {
 }
 
 criaRetangulo(10, 7)
+ */
 // Exercício 3
 /*
 
