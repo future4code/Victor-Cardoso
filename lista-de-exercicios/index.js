@@ -31,6 +31,8 @@ No valor -10 acredito que o for loop seja interrompido pois numero1 só aceita n
 // Exercícios de Lógica de Programação
 
 // Exercício 1
+/*
+Pode ser com for loop, for of, forEach e map.
 const listaDezenas = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
 for (let dezena of listaDezenas) {
@@ -44,6 +46,34 @@ listaDezenas.forEach((dezena) => {
 listaDezenas.map((dezena) => {
   console.log('Map', dezena)
 })
+*/
+
+// Exercício 2
+/*
+const booleano1 = true
+const booleano2 = false
+const booleano3 = !booleano2 => true
+const booleano4 = !booleano3 => false
+
+a. true && false && true ==> false
+b. (true && false) || false ==> (false) || false ==> false
+c. (false || true) && (false || true) ==> (true) && (true) ==> true
+d. !(false && true) || !(true && true) ==> (false) || (false) ==> false
+e. !(true) && !(true) || (!false && true && true) ==> (false) && (false) || (true) ==> true
+*/
+
+// Exercício 3
+/*
+
+*/
+// Exercício 4
+/*
+
+*/
+// Exercício 5
+/*
+
+*/
 
 // Exercícios de Funções
 
