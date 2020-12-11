@@ -12,3 +12,10 @@ Por último imprime o valor da variável meuDinheiro, que é 100 multiplicado pe
 Fora e depois da função duas variáveis para montante são declaradas, novoMontante que recebe a função investeDinheiro com o tipoDeInvestimento Ações e 150 de valor, e segundoMontante que recebe a função investeDinheiro com o tipoDeInvestimento Tesouro Direto e 200 de valor.
 Por último imprime no console novoMontante e segundoMontante.
 */
+
+// Exercício 3
+/*
+São declaradas 3 arrays, numeros, array1 e array2. Apenas a array numeros tem dados gravados.
+Depois tem um for of loop de numero, da array números, checkando se cada número é par, se for par, ele dá um push na array1, se for ímpar ele dá push na array2.
+Depois imprime no console a quantidade de números de todas as arrays.
+*/
