@@ -43,9 +43,7 @@ listaDezenas.forEach((dezena) => {
   console.log('For Each', dezena)
 })
 
-listaDezenas.map((dezena) => {
-  console.log('Map', dezena)
-})
+
 */
 
 // Exercício 2
@@ -266,7 +264,7 @@ const dobro = (array) => {
 }
 
 console.log(dobro(array))
-*/
+ */
 
 // b.
 /*
@@ -302,7 +300,7 @@ const strings = (array) => {
   return arrayStrings
 }
 console.log(strings(array))
-*/
+ */
 
 // Exercício 3
 /*
@@ -346,6 +344,7 @@ naoAutorizados(pessoas)
  */
 
 // Exercício 4
+/*
 const consultas = [
   {
     nome: 'João',
@@ -424,11 +423,39 @@ const emailCancelados = (pacientes) => {
 
 emailConsulta(consultas)
 emailCancelados(consultas)
-/*
-
 */
 
 // Exercício 5
+const contas = [
+  { cliente: 'João', saldoTotal: 1000, compras: [100, 200, 300] },
+  { cliente: 'Paula', saldoTotal: 7500, compras: [200, 1040] },
+  { cliente: 'Pedro', saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+  { cliente: 'Luciano', saldoTotal: 100, compras: [100, 200, 1700] },
+  { cliente: 'Artur', saldoTotal: 1800, compras: [200, 300] },
+  { cliente: 'Soter', saldoTotal: 1200, compras: [] }
+]
+
+const atualizaSaldo = (listaClientes) => {
+  let listaAtualizada = []
+
+  listaAtualizada = contas
+  // forEach no array de contas
+  listaClientes.forEach((saldoCliente) => {
+    let saldoAtualizado = 0
+
+    // mapeia array de compras, subtrai valor de compras do saldo
+    saldoCliente.compras.map((compra, index) => {
+      saldoAtualizado = saldoCliente.saldoTotal - compra
+      console.log(saldoAtualizado)
+    })
+
+    saldoCliente.saldoTotal = saldoAtualizado
+    return saldoAtualizado
+  })
+  console.log(listaAtualizada)
+}
+
+atualizaSaldo(contas)
 /*
 
 */
