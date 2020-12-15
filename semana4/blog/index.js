@@ -1,42 +1,34 @@
-const tituloInput = document.getElementById('titulo-post')
-const autorInput = document.getElementById('autor-post')
-const conteudoInput = document.getElementById('conteudo-post')
 const postsDiv = document.getElementById('posts')
-
-const post = {
-  titulo: '',
-  autor: '',
-  conteudo: ''
-}
 
 let posts = []
 
 function addPostToArray() {
   // Passando valor do input pra variavel
-  let tituloValue = tituloInput.value
-  let autorValue = autorInput.value
-  let conteudoValue = conteudoInput.value
+  let tituloInput = document.getElementById('titulo-post')
+  let autorInput = document.getElementById('autor-post')
+  let conteudoInput = document.getElementById('conteudo-post')
 
-  // Valor da variavel para os campos do objeto
-  post.titulo = tituloValue
-  post.autor = autorValue
-  post.conteudo = conteudoValue
+  let novoPost = {
+    titulo: tituloInput.value,
+    autor: autorInput.value,
+    conteudo: conteudoInput.value
+  }
 
-  console.log('Post criado: ', post)
-  console.log('Posts Array: ', posts)
+  // console.log('Post criado: ', novoPost)
+  // console.log('Posts Array: ', posts)
+
+  // push no array
+  posts.push(novoPost)
 
   // criação da article na div
   postsDiv.innerHTML += `<article class="post">
-  <p>Título: ${post.titulo}</p>
+  <p>Título: ${novoPost.titulo}</p>
   <br />
-  <p>Autor: ${post.autor}</p>
+  <p>Autor: ${novoPost.autor}</p>
   <br />
-  <p>Conteúdo: ${post.conteudo}</p>
+  <p>Conteúdo: ${novoPost.conteudo}</p>
   <br />
   </article>`
-
-  // push no array
-  posts.push(post)
 
   resetInputs()
 }
@@ -44,7 +36,7 @@ function addPostToArray() {
 // console.log(posts)
 
 resetInputs = () => {
-  tituloInput.value = ''
-  autorInput.value = ''
-  conteudoInput.value = ''
+  document.getElementById('titulo-post').value = ''
+  document.getElementById('autor-post').value = ''
+  document.getElementById('conteudo-post').value = ''
 }
