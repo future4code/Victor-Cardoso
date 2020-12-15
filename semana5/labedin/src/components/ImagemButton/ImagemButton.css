@@ -1,0 +1,14 @@
+.image-button-container {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px #bebebe;
+    width: 200px;
+    padding: 15px 30px;
+    margin: 1rem auto;
+}
+
+.image-button-container > img {
+    width: 30px;
+    margin-right: 10px;
+}
