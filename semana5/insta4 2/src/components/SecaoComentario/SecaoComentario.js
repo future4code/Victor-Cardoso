@@ -10,13 +10,12 @@ export class SecaoComentario extends React.Component {
     this.setState({
       textoInput: event.target.value
     })
+    this.logComentario()
   }
 
-  aoEnviar = () => {
-    this.setState({
-      textoInput: ''
-    })
-    console.log(this.state.textoInput)
+  logComentario = (comentario) => {
+    comentario = this.state.textoInput
+    console.log(comentario)
   }
 
   render() {
@@ -28,7 +27,7 @@ export class SecaoComentario extends React.Component {
           onChange={this.onChangeComentario}
           value={this.state.textoInput}
         />
-        <button className={'comment-button'} onClick={this.aoEnviar}>
+        <button className={'comment-button'} onClick={this.props.aoEnviar}>
           Enviar
         </button>
       </div>
