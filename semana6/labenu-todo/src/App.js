@@ -51,7 +51,10 @@ class App extends React.Component {
         completa: novaTarefa.completa,
       });
     }
-    this.setState({ tarefas: novaListaTarefas });
+
+    if (tarefas) {
+      this.setState({ tarefas: novaListaTarefas });
+    }
   }
 
   onChangeTodo = (event) => {
@@ -100,7 +103,7 @@ class App extends React.Component {
         case 'completas':
           return tarefa.completa;
         default:
-          return false;
+          return tarefa;
       }
     });
 
@@ -129,7 +132,6 @@ class App extends React.Component {
                 onClick={() => this.selectTarefa(tarefa.id)}
               >
                 {tarefa.texto}
-                <button></button>
               </Tarefa>
             );
           })}
