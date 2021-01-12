@@ -198,8 +198,8 @@ class App extends React.Component {
 
     request
       .then((response) => {
-        console.log(response);
         this.getUsers();
+        return response;
       })
       .catch((error) => {
         console.log(`Erro: ${error.message}`);
@@ -228,7 +228,10 @@ class App extends React.Component {
             <p>{user.email}</p>
           </TableData>
           <TableData>
-            <Button className="closing" onClick={this.deleteUser(user.id)}>
+            <Button
+              className="closing"
+              onClick={() => this.deleteUser(user.id)}
+            >
               X
             </Button>
           </TableData>
