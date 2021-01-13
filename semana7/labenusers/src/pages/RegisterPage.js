@@ -29,10 +29,13 @@ const Button = styled.button`
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 1000;
+  font-family: "Carme", sans-serif;
+  text-transform: uppercase;
   cursor: pointer;
   margin: 0.5rem 1rem;
   background-color: #c1d37f;
   color: #fff;
+  align-self: flex-end;
 
   &:hover {
     background-color: #b5cb67;

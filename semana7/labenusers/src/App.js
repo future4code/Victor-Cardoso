@@ -70,11 +70,13 @@ const Footer = styled.footer`
 `;
 
 const Button = styled.button`
-  padding: 0.5rem 0.7rem;
+  padding: 0.5rem 0.8rem;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 1000;
+  font-family: "Carme", sans-serif;
+  text-transform: uppercase;
   cursor: pointer;
   margin: 0.5rem 1rem;
   background-color: #c1d37f;
@@ -87,14 +89,27 @@ const Button = styled.button`
 
 class App extends React.Component {
   state = {
-    page: true,
+    page: "users",
   };
 
-  handlerChangePage = () => {
-    this.setState({ page: !this.state.page });
+  goToUsersPage = () => {
+    this.setState({ page: "users" });
+  };
+  goToRegisterPage = () => {
+    this.setState({ page: "register" });
   };
 
   render() {
+    const handlerChangePage = () => {
+      switch (this.state.page) {
+        case "users":
+          return <UsersPage />;
+        case "register":
+          return <RegisterPage />;
+        default:
+          return <UsersPage />;
+      }
+    };
     return (
       <Main>
         <Header>
@@ -102,18 +117,15 @@ class App extends React.Component {
 
           <Ul>
             <Li>
-              <Button href="/">Users</Button>
+              <Button onClick={this.goToUsersPage}>Users</Button>
             </Li>
             <Li>
-              <Button onClick={this.handlerChangePage}>Register</Button>
-            </Li>
-            <Li>
-              <Button onClick={this.handlerChangePage}>Profile</Button>
+              <Button onClick={this.goToRegisterPage}>Register</Button>
             </Li>
           </Ul>
         </Header>
 
-        <Section>{this.state.page ? <UsersPage /> : <RegisterPage />}</Section>
+        <Section>{handlerChangePage()}</Section>
 
         <Footer>
           <Heading2>

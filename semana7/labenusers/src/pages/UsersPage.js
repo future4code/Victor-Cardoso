@@ -1,6 +1,15 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
+import ProfilePage from "./ProfilePage";
+
+const Section = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Container = styled.div`
   padding: 1rem;
@@ -58,56 +67,90 @@ const Button = styled.button`
   &:hover {
     background-color: #eb5339;
   }
+
+  &.profileBtn {
+    font-size: 1rem;
+    /* color: #664e4c; */
+    background-color: #c1d37f;
+    font-weight: 1000;
+    font-family: "Carme", sans-serif;
+    text-transform: uppercase;
+  }
+  &.profileBtn:hover {
+    background-color: #b5cb67;
+  }
 `;
 
 class UsersPage extends React.Component {
   state = {
     users: [],
+    user: { id: "", name: "", email: "" },
+    profile: false,
   };
 
   componentDidMount = () => {
     this.getUsers();
   };
 
-  // Get users list
-  getUsers = () => {
-    const request = axios.get(
-      "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-      {
-        headers: {
-          Authorization: "victor-cardoso-epps",
-        },
-      }
-    );
+  onChangeProfile = () => {
+    this.setState({ profile: !this.state.profile });
+    this.setState({ user: this.state.user });
+  };
 
-    request
-      .then((response) => {
-        this.setState({ users: response.data });
-      })
-      .catch((error) => {
-        console.log("Erro: ", error);
-      });
+  // Get users list
+  getUsers = async () => {
+    try {
+      const response = await axios.get(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+        {
+          headers: {
+            Authorization: "victor-cardoso-epps",
+          },
+        }
+      );
+
+      this.setState({ users: response.data });
+    } catch (error) {
+      console.log("Erro: ", error.response);
+    }
+  };
+
+  // Get single user
+  getUserById = async (userId) => {
+    this.setState({ profile: !this.state.profile });
+    try {
+      const response = await axios.get(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${userId}`,
+        {
+          headers: {
+            Authorization: "victor-cardoso-epps",
+          },
+        }
+      );
+
+      this.setState({ user: response.data[0] });
+      return response.data;
+    } catch (error) {
+      console.log("Erro: ", error.response);
+    }
   };
 
   // Delete a user
-  deleteUser = (userId) => {
-    const request = axios.delete(
-      `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${userId}`,
-      {
-        headers: {
-          Authorization: "victor-cardoso-epps",
-        },
-      }
-    );
-
-    request
-      .then((response) => {
-        this.getUsers();
-        return response;
-      })
-      .catch((error) => {
-        console.log(`Erro: ${error.message}`);
-      });
+  deleteUser = async (userId) => {
+    try {
+      const response = await axios.delete(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${userId}`,
+        {
+          headers: {
+            Authorization: "victor-cardoso-epps",
+          },
+        }
+      );
+      this.getUsers();
+      return response;
+    } catch (error) {
+      console.log(`Erro: ${error.message}`);
+    }
   };
 
   render() {
@@ -120,7 +163,12 @@ class UsersPage extends React.Component {
             <p>{user.name}</p>
           </TableData>
           <TableData>
-            <p>{user.email}</p>
+            <Button
+              className="profileBtn"
+              onClick={() => this.onChangeProfile(user)}
+            >
+              Profile
+            </Button>
           </TableData>
           <TableData>
             <Button
@@ -133,20 +181,36 @@ class UsersPage extends React.Component {
         </TableRow>
       );
     });
+
     return (
-      <Container>
-        <h1>{title}</h1>
-        <Table>
-          <TableBody>
-            <TableRow>
-              <TableHeader colSpan="1">Name</TableHeader>
-              <TableHeader colSpan="1"></TableHeader>
-              <TableHeader colSpan="1">Users: {usersList.length}</TableHeader>
-            </TableRow>
-            {usersList}
-          </TableBody>
-        </Table>
-      </Container>
+      <Section>
+        {this.state.profile ? (
+          <Container>
+            {/* <button onClick={this.onChangeProfile}>Voltar</button> */}
+            <ProfilePage
+              key={this.state.user.id}
+              name={this.state.user.name}
+              email={this.state.user.email}
+            />
+          </Container>
+        ) : (
+          <Container>
+            <h1>{title}</h1>
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableHeader colSpan="1">Name</TableHeader>
+                  <TableHeader colSpan="1"></TableHeader>
+                  <TableHeader colSpan="1">
+                    Users: {usersList.length}
+                  </TableHeader>
+                </TableRow>
+                {usersList}
+              </TableBody>
+            </Table>
+          </Container>
+        )}
+      </Section>
     );
   }
 }
