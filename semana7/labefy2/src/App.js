@@ -98,6 +98,7 @@ class App extends React.Component {
   goToCreatePlaylistPage = () => {
     this.setState({ page: "create" });
   };
+
   render() {
     const handlerChangePage = () => {
       switch (this.state.page) {
