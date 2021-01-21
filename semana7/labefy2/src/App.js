@@ -1,9 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
-import UsersPage from "./pages/UsersPage";
-import RegisterPage from "./pages/RegisterPage";
-
-// Styled Components
+import PlaylistsPage from "./pages/PlaylistsPage";
+import CreatePlaylistPage from "./pages/CreatePlaylistPage";
 
 const Heading1 = styled.h1`
   font-size: 2rem;
@@ -23,12 +21,13 @@ const Main = styled.main`
   height: 100vh;
   background-color: #f5f5f5;
   color: #664e4c;
-  font-family: "Fraunces", serif;
+  font-family: "Carme", sans-serif;
   overflow-x: hidden;
 `;
 
 const Section = styled.section`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,14 +51,6 @@ const Header = styled.header`
   background-color: #f3edce;
 `;
 
-const Ul = styled.ul`
-  display: flex;
-  padding: 0 2rem;
-`;
-const Li = styled.li`
-  list-style: none;
-`;
-
 const Footer = styled.footer`
   width: 100%;
   display: flex;
@@ -67,6 +58,15 @@ const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   height: 10vh;
+`;
+
+const Ul = styled.ul`
+  display: flex;
+  padding: 0 2rem;
+`;
+
+const Li = styled.li`
+  list-style: none;
 `;
 
 const Button = styled.button`
@@ -89,48 +89,52 @@ const Button = styled.button`
 
 class App extends React.Component {
   state = {
-    page: "users",
+    page: "playlists",
   };
 
-  goToUsersPage = () => {
-    this.setState({ page: "users" });
+  goToPlaylistsPage = () => {
+    this.setState({ page: "playlists" });
   };
-  goToRegisterPage = () => {
-    this.setState({ page: "register" });
+  goToCreatePlaylistPage = () => {
+    this.setState({ page: "create" });
   };
 
   render() {
     const handlerChangePage = () => {
       switch (this.state.page) {
-        case "users":
-          return <UsersPage />;
-        case "register":
-          return <RegisterPage />;
+        case "playlists":
+          return <PlaylistsPage title={"My Playlists"} />;
+        case "create":
+          return <CreatePlaylistPage title={"Create playlist"} />;
         default:
-          return <UsersPage />;
+          return <PlaylistsPage />;
       }
     };
+
     return (
       <Main>
         <Header>
-          <Heading1>Labenusers</Heading1>
+          <Heading1>Labefy</Heading1>
 
           <Ul>
             <Li>
-              <Button onClick={this.goToUsersPage}>Users</Button>
+              <Button onClick={this.goToPlaylistsPage}>My Playlists</Button>
             </Li>
             <Li>
-              <Button onClick={this.goToRegisterPage}>Register</Button>
+              <Button onClick={this.goToCreatePlaylistPage}>
+                Create playlist
+              </Button>
             </Li>
           </Ul>
         </Header>
-
         <Section>{handlerChangePage()}</Section>
 
         <Footer>
-          <Heading2>
-            <Container>Footer</Container>
-          </Heading2>
+          <Container>
+            <audio controls>
+              <source></source>
+            </audio>
+          </Container>
         </Footer>
       </Main>
     );
