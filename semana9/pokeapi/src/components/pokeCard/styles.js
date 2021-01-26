@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  width: 100vw;
+  width: 80vw;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -9,8 +9,9 @@ export const Section = styled.section`
 
 export const Card = styled.div`
   max-width: 100%;
-  min-height: 250px;
   min-width: 200px;
+  max-height: 400px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +24,8 @@ export const Card = styled.div`
   box-shadow: 1px 3px 7px #7e7e7e;
   border-radius: 4px;
 `;
+
+export const Heading3 = styled.h3``;
 
 export const List = styled.ul`
   margin: 0;

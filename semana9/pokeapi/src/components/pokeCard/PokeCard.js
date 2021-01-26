@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Section, Card, Text, List, ListItem } from "./styles.js";
+import { Section, Card, Heading3, Text, List, ListItem } from "./styles.js";
 
 const PokeCard = (props) => {
   // TO DO: useState pokemon object
@@ -11,7 +11,7 @@ const PokeCard = (props) => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setPokemon(response.data);
       })
       .catch((err) => {
@@ -27,11 +27,11 @@ const PokeCard = (props) => {
   return (
     <Section>
       <Card>
+        <Heading3>{pokemon.name}</Heading3>
         {pokemon.sprites && (
           <img src={pokemon.sprites.front_default} alt={pokemon.name} />
         )}
         <div>
-          <Text>Name: {pokemon.name}</Text>
           <Text>
             Type:{" "}
             {pokemon.types && (
