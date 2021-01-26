@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PokeCard from "./components/pokeCard/PokeCard";
-import { Main, Heading2 } from "./globalStyle";
+import { Main, Heading2, Select, Option } from "./globalStyle";
 
 const App = () => {
   const title = "pokeList";
@@ -17,9 +17,9 @@ const App = () => {
   const getPokeList = () => {
     axios
       .get("https://pokeapi.co/api/v2/pokemon/?limit=151")
-      .then((res) => {
+      .then((response) => {
         // console.log(res.data.results);
-        setPokeList(res.data.results);
+        setPokeList(response.data.results);
       })
       .catch((err) => {
         console.log(err);
@@ -32,23 +32,23 @@ const App = () => {
     return () => {
       // cleanup;
     };
-  }, []);
+  }, [pokeName]);
 
   return (
     // TO DO: select with pokemon names
     // TO DO: render pokeList map
     <Main>
       <Heading2>{title}</Heading2>
-      <select name="" id="" onChange={onChangePokeName}>
-        <option value={""}>Nenhum</option>
+      <Select name="" id="" onChange={onChangePokeName}>
+        <Option value={""}>Nenhum</Option>
         {pokeList.map((pokemon) => {
           return (
-            <option key={pokemon.name} value={pokemon.name}>
+            <Option key={pokemon.name} value={pokemon.name}>
               {pokemon.name}
-            </option>
+            </Option>
           );
         })}
-      </select>
+      </Select>
       <PokeCard pokemon={pokeName} />
     </Main>
   );
