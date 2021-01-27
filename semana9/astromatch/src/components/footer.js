@@ -8,12 +8,12 @@ const Footer = () => {
       as="footer"
       w="100%"
       h="100%"
-      maxH="10vh"
+      marginBottom="1rem"
       justify="space-evenly"
       align="center"
     >
       <IconButton
-        padding="1.5rem .7rem"
+        padding="1.8rem 1rem"
         fontSize="1.8rem"
         borderRadius="50%"
         colorScheme="red"
@@ -27,10 +27,10 @@ const Footer = () => {
         icon={<HiStar />}
       />
       <IconButton
-        padding="1.5rem .7rem"
+        padding="1.8rem 1rem"
         fontSize="1.8rem"
         borderRadius="50%"
-        colorScheme="red"
+        colorScheme="green"
         icon={<HiHeart />}
       />
     </Flex>

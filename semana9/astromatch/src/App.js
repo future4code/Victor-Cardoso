@@ -1,6 +1,4 @@
-import { useState } from "react";
 import {
-  Button,
   Center,
   TabList,
   Tab,
@@ -8,7 +6,6 @@ import {
   extendTheme,
   TabPanels,
   TabPanel,
-  Icon,
 } from "@chakra-ui/react";
 import { HiAnnotation, HiUserCircle } from "react-icons/hi";
 import { RiFireFill } from "react-icons/ri";
@@ -21,8 +18,6 @@ import MatchPage from "./pages/matchPage";
 import ProfilePage from "./pages/profilePage";
 
 const App = () => {
-  const [menuPage, setMenuPage] = useState("");
-
   // Global Styles
   const fourTwentyTheme = extendTheme({
     styles: {
@@ -38,44 +33,31 @@ const App = () => {
     colors: {},
   });
 
-  // Functions to swith state
-  const switchToMain = () => {
-    setMenuPage("main");
-  };
-  const switchToMatches = () => {
-    setMenuPage("matches");
-  };
-  const switchToProfile = () => {
-    setMenuPage("profile");
-  };
-
-  // Switch case to change pages
-  const switchMenuPage = () => {
-    switch (menuPage) {
-      case "main":
-        return <MainPage />;
-      case "matches":
-        return <MatchPage />;
-      case "profile":
-        return <ProfilePage />;
-      default:
-        return <MainPage />;
-    }
-  };
-
   return (
     <ChakraProvider theme={fourTwentyTheme}>
       <Center as="main" h="100vh" w="100vw" flexDirection="column">
         <Header>
           <TabList h="10vh">
-            <Tab _selected={{ color: "#1e1e1e" }} color="#727272">
-              <RiFireFill fontSize="1.8rem" />
+            <Tab
+              _selected={{ color: "#1e1e1e", fontSize: "2.2rem" }}
+              color="#727272"
+              fontSize="2rem"
+            >
+              <RiFireFill />
             </Tab>
-            <Tab _selected={{ color: "#1e1e1e" }} color="#727272">
-              <HiAnnotation fontSize="1.8rem" />
+            <Tab
+              _selected={{ color: "#1e1e1e", fontSize: "2.2rem" }}
+              color="#727272"
+              fontSize="2rem"
+            >
+              <HiAnnotation />
             </Tab>
-            <Tab _selected={{ color: "#1e1e1e" }} color="#727272">
-              <HiUserCircle fontSize="1.8rem" />
+            <Tab
+              _selected={{ color: "#1e1e1e", fontSize: "2.2rem" }}
+              color="#727272"
+              fontSize="2rem"
+            >
+              <HiUserCircle />
             </Tab>
           </TabList>
           <TabPanels>
