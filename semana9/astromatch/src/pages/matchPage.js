@@ -34,7 +34,12 @@ const MatchesPage = (props) => {
                 key={match.id}
                 borderBottom="1px solid #ddd"
               >
-                <Image boxSize="50px" borderRadius="full" src={match.photo} />
+                <Image
+                  objectFit="cover"
+                  boxSize="60px"
+                  borderRadius="full"
+                  src={match.photo}
+                />
                 <Text marginX="1rem" fontSize="1.2rem" fontWeight="bold">
                   {match.name}
                 </Text>

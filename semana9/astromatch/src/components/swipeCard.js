@@ -29,6 +29,8 @@ const SwipeCard = (props) => {
     <Flex
       w="100%"
       h="100%"
+      maxW="450px"
+      maxH="700px"
       direction="column"
       alignItems="flex-end"
       justifyContent="flex-end"
@@ -36,9 +38,11 @@ const SwipeCard = (props) => {
       borderRadius="5px"
       bgImage={`url('${person.photo}')`}
       bgRepeat="no-repeat"
+      bgPos="center"
+      bgSize="100% 100%"
+      objectFit="cover"
       padding="1.5rem"
     >
-      {/* <Image borderTopRadius="5px" src={person.photo} alt="" /> */}
       <Text
         color="white"
         fontSize="2rem"
