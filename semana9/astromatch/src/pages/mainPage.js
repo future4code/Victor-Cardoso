@@ -6,7 +6,14 @@ import SwipeCard from "../components/swipeCard";
 const mainPage = () => {
   return (
     <Center as="main" h="100%" w="100%">
-      <Flex as="section" h="100%" w="100%" justify="center" align="center">
+      <Flex
+        as="section"
+        h="100%"
+        padding="2rem"
+        w="100%"
+        justify="center"
+        align="center"
+      >
         <SwipeCard />
       </Flex>
     </Center>

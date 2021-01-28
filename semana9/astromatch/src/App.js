@@ -39,21 +39,21 @@ const App = () => {
         <Header>
           <TabList h="10vh">
             <Tab
-              _selected={{ color: "#1e1e1e", fontSize: "2.2rem" }}
+              _selected={{ color: "#1e1e1e", fontSize: "2.5rem" }}
               color="#727272"
               fontSize="2rem"
             >
               <RiFireFill />
             </Tab>
             <Tab
-              _selected={{ color: "#1e1e1e", fontSize: "2.2rem" }}
+              _selected={{ color: "#1e1e1e", fontSize: "2.5rem" }}
               color="#727272"
               fontSize="2rem"
             >
               <HiAnnotation />
             </Tab>
             <Tab
-              _selected={{ color: "#1e1e1e", fontSize: "2.2rem" }}
+              _selected={{ color: "#1e1e1e", fontSize: "2.5rem" }}
               color="#727272"
               fontSize="2rem"
             >
@@ -61,13 +61,13 @@ const App = () => {
             </Tab>
           </TabList>
           <TabPanels>
-            <TabPanel w="100%" h="80vh">
+            <TabPanel p="0" w="100%" h="80vh">
               {<MainPage />}
             </TabPanel>
-            <TabPanel w="100%" h="80vh">
+            <TabPanel p="0" w="100%" h="80vh">
               {<MatchPage />}
             </TabPanel>
-            <TabPanel w="100%" h="80vh">
+            <TabPanel p="0" w="100%" h="80vh">
               {<ProfilePage />}
             </TabPanel>
           </TabPanels>
