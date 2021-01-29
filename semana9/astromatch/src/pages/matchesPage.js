@@ -12,14 +12,14 @@ const MatchesPage = (props) => {
         "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/victor-cardoso-epps/matches"
       )
       .then((response) => {
-        console.log(response.data.matches);
+        // console.log(response.data.matches);
         setMatches(response.data.matches);
       });
   };
 
   useEffect(() => {
     getMatches();
-  }, [props.matches]);
+  }, []);
 
   return (
     <Center as="main" h="100%" w="100%">

@@ -11,10 +11,9 @@ import { HiAnnotation, HiUserCircle } from "react-icons/hi";
 import { RiFireFill } from "react-icons/ri";
 
 import Header from "./components/header";
-import Footer from "./components/footer";
 
 import MainPage from "./pages/mainPage";
-import MatchPage from "./pages/matchPage";
+import MatchesPage from "./pages/matchesPage";
 import ProfilePage from "./pages/profilePage";
 
 const App = () => {
@@ -35,7 +34,13 @@ const App = () => {
 
   return (
     <ChakraProvider theme={fourTwentyTheme}>
-      <Center as="main" h="100vh" w="100vw" flexDirection="column">
+      <Center
+        as="main"
+        h="100vh"
+        w="100vw"
+        flexDirection="column"
+        justifyContent="flex-start"
+      >
         <Header>
           <TabList h="10vh">
             <Tab
@@ -61,18 +66,17 @@ const App = () => {
             </Tab>
           </TabList>
           <TabPanels>
-            <TabPanel p="0" w="100%" h="80vh">
+            <TabPanel p="0" w="100%" h="100%">
               {<MainPage />}
             </TabPanel>
             <TabPanel p="0" w="100%" h="80vh">
-              {<MatchPage />}
+              {<MatchesPage />}
             </TabPanel>
             <TabPanel p="0" w="100%" h="80vh">
               {<ProfilePage />}
             </TabPanel>
           </TabPanels>
         </Header>
-        <Footer />
       </Center>
     </ChakraProvider>
   );
