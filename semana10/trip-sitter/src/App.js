@@ -12,7 +12,6 @@ const App = () => {
           boxSizing: "border-box",
           fontFamily: "Baumans, cursive",
           color: "whiteTrip.900",
-          // bgGradient: "linear-gradient(223.88deg, #1E1E1F, #1E1E1E)",
           bgGradient: "linear-gradient(115deg, #1d1b2b, #1b1b1f)",
           // fontFamily: "Hammersmith One, sans-serif",
           // fontFamily: "Overpass, sans-serif",

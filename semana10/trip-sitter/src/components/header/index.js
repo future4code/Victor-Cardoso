@@ -68,6 +68,7 @@ const Header = () => {
           fontWeight="600"
           paddingX="1rem"
           _hover={{ color: "yellowTrip.700", bgColor: "purpleTrip.400" }}
+          _active={{ color: "yellowTrip.500", bgColor: "purpleTrip.200" }}
           onClick={() => goToApply(history)}
         >
           let's trip!

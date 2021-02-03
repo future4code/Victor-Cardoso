@@ -8,15 +8,12 @@ import Home from "../pages/home";
 import SignIn from "../pages/signIn";
 import SignUp from "../pages/signUp";
 import TripApply from "../pages/tripApply";
-
+import Error from "../pages/404";
 import Dashboard from "../pages/dashboard";
-import Trips from "../pages/trips";
-import Applies from "../pages/applies";
 import TripDetails from "../pages/tripDetails";
 
 import Header from "../components/header";
 import Footer from "../components/footer";
-import Error from "../pages/404";
 
 const Routes = () => {
   return (
