@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Flex, Image, Link } from "@chakra-ui/react";
+import { Button, Flex, Image } from "@chakra-ui/react";
 
 import { useHistory } from "react-router-dom";
 
@@ -10,10 +10,15 @@ import {
   goToApply,
   goToSignIn,
   goToSignUp,
+  goToTrips,
+  goToApplies,
 } from "../../routes/Coordinator";
+import { useAuth } from "../../hooks/useAuth";
 
 const Header = () => {
   const history = useHistory();
+  const auth = useAuth();
+
   return (
     <Flex
       as="header"
@@ -23,33 +28,64 @@ const Header = () => {
       alignItems="center"
       justify="space-around"
     >
-      <Flex maxW="30%" w="30%" justify="space-evenly">
-        <Button
-          colorScheme="whiteTrip"
-          variant="outline"
-          fontSize="1.2rem"
-          fontWeight="400"
-          paddingX="1rem"
-          _hover={{
-            color: "purpleTrip.400",
-            bgColor: "transparent",
-          }}
-          onClick={() => goToSignUp(history)}
-        >
-          register
-        </Button>
-        <Button
-          colorScheme="whiteTrip"
-          variant="outline"
-          fontWeight="400"
-          fontSize="1.2rem"
-          paddingX="1rem"
-          _hover={{ color: "purpleTrip.400", bgColor: "transparent" }}
-          onClick={() => goToSignIn(history)}
-        >
-          login
-        </Button>
-      </Flex>
+      {auth ? (
+        <Flex maxW="30%" w="30%" justify="space-evenly">
+          <Button
+            colorScheme="whiteTrip"
+            variant="outline"
+            fontSize="1.2rem"
+            fontWeight="400"
+            paddingX="1rem"
+            _hover={{
+              color: "purpleTrip.400",
+              bgColor: "transparent",
+            }}
+            onClick={() => goToTrips(history)}
+          >
+            trips
+          </Button>
+          <Button
+            colorScheme="whiteTrip"
+            variant="outline"
+            fontWeight="400"
+            fontSize="1.2rem"
+            paddingX="1rem"
+            _hover={{ color: "purpleTrip.400", bgColor: "transparent" }}
+            onClick={() => goToApplies(history)}
+          >
+            applies
+          </Button>
+        </Flex>
+      ) : (
+        <Flex maxW="30%" w="30%" justify="space-evenly">
+          <Button
+            colorScheme="whiteTrip"
+            variant="outline"
+            fontSize="1.2rem"
+            fontWeight="400"
+            paddingX="1rem"
+            _hover={{
+              color: "purpleTrip.400",
+              bgColor: "transparent",
+            }}
+            onClick={() => goToSignUp(history)}
+          >
+            register
+          </Button>
+          <Button
+            colorScheme="whiteTrip"
+            variant="outline"
+            fontWeight="400"
+            fontSize="1.2rem"
+            paddingX="1rem"
+            _hover={{ color: "purpleTrip.400", bgColor: "transparent" }}
+            onClick={() => goToSignIn(history)}
+          >
+            login
+          </Button>
+        </Flex>
+      )}
+
       <Flex maxW="40%">
         <Image
           onClick={() => goHome(history)}

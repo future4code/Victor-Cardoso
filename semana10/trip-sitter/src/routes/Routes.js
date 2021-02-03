@@ -14,6 +14,9 @@ import TripDetails from "../pages/tripDetails";
 
 import Header from "../components/header";
 import Footer from "../components/footer";
+import CreateTrip from "../pages/createTrip";
+import Applies from "../pages/applies";
+import Trips from "../pages/trips";
 
 const Routes = () => {
   return (
@@ -45,7 +48,16 @@ const Routes = () => {
           <Route path="/dashboard/:name">
             <Dashboard />
           </Route>
-          <Route path="/:tripId/details">
+          <Route path="/createTrip">
+            <CreateTrip />
+          </Route>
+          <Route path="/applies">
+            <Applies />
+          </Route>
+          <Route path="/trips">
+            <Trips />
+          </Route>
+          <Route path="/trips/:tripId/details">
             <TripDetails />
           </Route>
           <Route>

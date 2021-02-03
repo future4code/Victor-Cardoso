@@ -2,31 +2,38 @@ import { Box, Flex, Heading, Input, FormLabel, Button } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { useForm } from "react-hook-form";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+  const { handleSubmit, errors, register } = useForm();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     token && history.push("/dashboard/trips");
   }, [history]);
 
+  const onSubmit = () => {
+    signInUser();
+  };
+
   const signInUser = () => {
     const user = {
       email: email,
       password: password,
     };
+
     axios
       .post(
         "https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-epps/login",
         user
       )
       .then((response) => {
+        localStorage.setItem("token", response.data.token);
+        history.push("/dashboard/trips");
         console.log(response.data);
-        localStorage.getItem("token", response.data.token);
-        return response.data;
       })
       .catch((err) => {
         throw new Error(err);
@@ -36,11 +43,13 @@ const LoginForm = () => {
   return (
     <Flex h="100%" alignItems="center">
       <Box
+        as="form"
         w="100%"
         maxH="400px"
         padding="1.5rem"
         borderRadius="5px"
         border="1px solid white"
+        onSubmit={handleSubmit(onSubmit)}
       >
         <Heading textAlign="center">Sign In</Heading>
         <FormLabel>email</FormLabel>
@@ -53,9 +62,14 @@ const LoginForm = () => {
           _hover={{
             bgColor: "rgba(247, 255, 247, 0.3)",
           }}
+          name="email"
+          type="email"
+          ref={register({ required: true })}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        {errors.email && <span>erro no email</span>}
+
         <FormLabel>password</FormLabel>
         <Input
           marginBottom="1rem"
@@ -66,10 +80,13 @@ const LoginForm = () => {
           _hover={{
             bgColor: "rgba(247, 255, 247, 0.3)",
           }}
+          name="password"
           type="password"
+          ref={register({ required: true, minLength: 6 })}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        {errors.password && <span>erro na senha</span>}
         <Button
           colorScheme="yellowTrip"
           color="blackTrip.100"
@@ -77,7 +94,7 @@ const LoginForm = () => {
           fontWeight="600"
           _hover={{ color: "yellowTrip.700", bgColor: "purpleTrip.400" }}
           _active={{ color: "yellowTrip.500", bgColor: "purpleTrip.200" }}
-          onClick={() => signInUser()}
+          type="submit"
         >
           Sign In
         </Button>

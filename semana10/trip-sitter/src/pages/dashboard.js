@@ -10,6 +10,10 @@ const Dashboard = () => {
   const pathParams = useParams();
 
   useEffect(() => {
+    if (!pathParams) {
+      pathParams.name = "trips";
+      history.push("/trips");
+    }
     if (pathParams.name !== "trips" && pathParams.name !== "applies") {
       history.push("/error");
     }
