@@ -9,18 +9,14 @@ import {
   Th,
   Thead,
   Tr,
-  useMultiStyleConfig,
 } from "@chakra-ui/react";
 import { goToCreateTrip } from "../routes/Coordinator";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-const Trips = (props) => {
+const Trips = () => {
   const history = useHistory();
   const [trips, setTrips] = useState([]);
-
-  const { size, variant, children, ...rest } = props;
-  const styles = useMultiStyleConfig("Table", { size, variant });
 
   const getTrips = async () => {
     try {
@@ -59,32 +55,16 @@ const Trips = (props) => {
       <Table w="80%">
         <Thead>
           <Tr>
-            <Th
-              fontFamily="Overpass, sans-serif"
-              fontSize="1rem"
-              color="yellowTrip.700"
-            >
+            <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
               Name
             </Th>
-            <Th
-              fontFamily="Overpass, sans-serif"
-              fontSize="1rem"
-              color="yellowTrip.700"
-            >
+            <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
               Planet
             </Th>
-            <Th
-              fontFamily="Overpass, sans-serif"
-              fontSize="1rem"
-              color="yellowTrip.700"
-            >
+            <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
               Duration
             </Th>
-            <Th
-              fontFamily="Overpass, sans-serif"
-              fontSize="1rem"
-              color="yellowTrip.700"
-            >
+            <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
               Date
             </Th>
           </Tr>

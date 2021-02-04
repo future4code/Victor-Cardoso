@@ -3,7 +3,11 @@ import { Flex } from "@chakra-ui/react";
 import { useAuth } from "../hooks/useAuth";
 
 const Applies = () => {
-  useAuth();
+  // useAuth();
+
+  // const getApplies = async () => {
+  //   const response = await axios.post("")
+  // }
   return (
     <Flex as="section" h="65vh">
       Applies dashboard

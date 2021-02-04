@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Button, Flex, Image } from "@chakra-ui/react";
 
 import { useHistory } from "react-router-dom";
+
+import { getToken, removeToken } from "../../hooks/useToken";
 
 import Logo from "../../img/Logo.svg";
 import {
@@ -13,11 +15,23 @@ import {
   goToTrips,
   goToApplies,
 } from "../../routes/Coordinator";
-import { useAuth } from "../../hooks/useAuth";
 
 const Header = () => {
   const history = useHistory();
-  const auth = useAuth();
+
+  // const [token, setToken] = useState("");
+  const token = getToken();
+  console.log(token);
+
+  // useEffect(() => {
+  //   setToken(getToken());
+  //   console.log(token);
+  // }, [token]);
+
+  const signOut = (token) => {
+    removeToken(token);
+    goHome(history);
+  };
 
   return (
     <Flex
@@ -28,7 +42,7 @@ const Header = () => {
       alignItems="center"
       justify="space-around"
     >
-      {auth ? (
+      {token ? (
         <Flex maxW="30%" w="30%" justify="space-evenly">
           <Button
             colorScheme="whiteTrip"
@@ -96,19 +110,35 @@ const Header = () => {
         />
       </Flex>
       <Flex maxW="30%" paddingX="1rem">
-        <Button
-          marginRight="1.5rem"
-          colorScheme="yellowTrip"
-          color="blackTrip.100"
-          fontSize="1.2rem"
-          fontWeight="600"
-          paddingX="1rem"
-          _hover={{ color: "yellowTrip.700", bgColor: "purpleTrip.400" }}
-          _active={{ color: "yellowTrip.500", bgColor: "purpleTrip.200" }}
-          onClick={() => goToApply(history)}
-        >
-          let's trip!
-        </Button>
+        {token ? (
+          <Button
+            marginRight="1.5rem"
+            colorScheme="yellowTrip"
+            color="blackTrip.100"
+            fontSize="1.2rem"
+            fontWeight="600"
+            paddingX="1rem"
+            _hover={{ color: "yellowTrip.700", bgColor: "purpleTrip.400" }}
+            _active={{ color: "yellowTrip.500", bgColor: "purpleTrip.200" }}
+            onClick={() => signOut(token)}
+          >
+            sign out
+          </Button>
+        ) : (
+          <Button
+            marginRight="1.5rem"
+            colorScheme="yellowTrip"
+            color="blackTrip.100"
+            fontSize="1.2rem"
+            fontWeight="600"
+            paddingX="1rem"
+            _hover={{ color: "yellowTrip.700", bgColor: "purpleTrip.400" }}
+            _active={{ color: "yellowTrip.500", bgColor: "purpleTrip.200" }}
+            onClick={() => goToApply(history)}
+          >
+            let's trip!
+          </Button>
+        )}
       </Flex>
     </Flex>
   );

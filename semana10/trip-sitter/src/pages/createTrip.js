@@ -4,13 +4,13 @@ import { useAuth } from "../hooks/useAuth";
 import PrivateRoute from "../routes/PrivateRoute";
 
 const CreateTrip = () => {
-  useAuth();
+  // useAuth();
   return (
-    <PrivateRoute>
-      <Flex as="section" h="65vh">
-        Create Trip
-      </Flex>
-    </PrivateRoute>
+    // <PrivateRoute>
+    <Flex as="section" h="65vh">
+      Create Trip
+    </Flex>
+    // </PrivateRoute>
   );
 };
 

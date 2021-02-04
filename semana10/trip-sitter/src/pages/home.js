@@ -19,7 +19,7 @@ const Home = () => {
       align="center"
       justify="center"
     >
-      <Heading>tripSitter</Heading>
+      <Heading>HOME</Heading>
 
       <Button
         colorScheme="yellowTrip"

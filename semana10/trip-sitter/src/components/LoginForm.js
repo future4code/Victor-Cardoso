@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { setToken } from "../hooks/useToken";
 
-const LoginForm = ({ setToken }) => {
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -31,10 +32,10 @@ const LoginForm = ({ setToken }) => {
         user
       )
       .then((response) => {
-        // const token = response.data.
-        // setToken();
+        console.log(response.data.token);
+        setToken(response.data.token);
         history.push("/dashboard/trips");
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch((err) => {
         throw new Error(err);
@@ -88,6 +89,7 @@ const LoginForm = ({ setToken }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         {errors.password && <span>erro na senha</span>}
+
         <Button
           colorScheme="yellowTrip"
           color="blackTrip.100"
