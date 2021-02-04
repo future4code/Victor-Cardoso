@@ -20,6 +20,10 @@ const App = () => {
         button: {
           fontFamily: "Poppins, sans-serif",
         },
+        table: {
+          border: "1px solid white",
+          borderRadius: "5px",
+        },
       },
     },
     colors: {
@@ -36,11 +40,12 @@ const App = () => {
         900: "#F7FFF7",
       },
       blackTrip: {
-        100: "#1E1E1E",
+        100: "#1c1924",
         200: "#1B1B1F",
       },
     },
   });
+
   return (
     <ChakraProvider theme={tripTheme}>
       <Router />

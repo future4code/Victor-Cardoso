@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
-const LoginForm = () => {
+const LoginForm = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -31,7 +31,8 @@ const LoginForm = () => {
         user
       )
       .then((response) => {
-        localStorage.setItem("token", response.data.token);
+        // const token = response.data.
+        // setToken();
         history.push("/dashboard/trips");
         console.log(response.data);
       })
