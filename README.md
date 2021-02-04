@@ -1,7 +1,6 @@
-Alunos(as), sejam bem-vindos(as)!
+Seja bem-vindo, sou o Victor, e este é o meu repositório da Labenu!
 
-Esse repositório vai acompanhar vocês até o final do curso, para mantermos a organização, sugerimos que vocês sigam a seguinte estrutura:
-
+Esta é a estrutura das pastas e projetos:
 ```
 .
 ├── semana-1
@@ -17,21 +16,6 @@ Esse repositório vai acompanhar vocês até o final do curso, para mantermos a 
 │   ├── aula7
 │   ├── aula8
 │   └── projeto-nome
-|
-├── semana-3
-│   ├── aula9
-│   ├── aula10
-│   ├── aula11
-│   ├── aula12
-│   └── projeto-nome
-|
-├── semana-4
-│   ├── aula13
-│   ├── aula14
-│   ├── aula15
-│   ├── aula16
-│   └── projeto-nome
-|
+...
 ```
-
 Uma pasta para cada semana, dentro delas uma pasta para cada dia de aula e por fim uma pasta para o projeto da semana.
