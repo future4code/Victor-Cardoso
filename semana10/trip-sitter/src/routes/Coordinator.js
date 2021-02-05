@@ -25,3 +25,7 @@ export const goToTrips = (history) => {
 export const goToApplies = (history) => {
   history.push("/dashboard/applies");
 };
+
+export const goToTripDetails = (history, id) => {
+  history.push(`/dashboard/trips/${id}`);
+};

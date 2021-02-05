@@ -10,11 +10,11 @@ const App = () => {
           margin: 0,
           padding: 0,
           boxSizing: "border-box",
-          fontFamily: "Baumans, cursive",
+          // fontFamily: "Baumans, cursive",
           color: "whiteTrip.900",
           bgGradient: "linear-gradient(115deg, #1d1b2b, #1b1b1f)",
           // fontFamily: "Hammersmith One, sans-serif",
-          // fontFamily: "Overpass, sans-serif",
+          fontFamily: "Overpass, sans-serif",
           // fontFamily: "Poppins, sans-serif",
         },
         button: {

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { setToken } from "../hooks/useToken";
+import { getToken, setToken } from "../hooks/useToken";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ const LoginForm = () => {
   const { handleSubmit, errors, register } = useForm();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = getToken();
     token && history.push("/dashboard/trips");
   }, [history]);
 
@@ -34,8 +34,8 @@ const LoginForm = () => {
       .then((response) => {
         console.log(response.data.token);
         setToken(response.data.token);
+        window.location.reload();
         history.push("/dashboard/trips");
-        // console.log(response.data);
       })
       .catch((err) => {
         throw new Error(err);

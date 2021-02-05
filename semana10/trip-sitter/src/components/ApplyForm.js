@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -7,12 +7,10 @@ import {
   Input,
   Textarea,
 } from "@chakra-ui/react";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
 const ApplyForm = () => {
-  const history = useHistory();
   const { handleSubmit, errors, register } = useForm();
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
@@ -24,7 +22,7 @@ const ApplyForm = () => {
     createApply();
   };
 
-  const createApply = () => {
+  const createApply = async () => {
     const apply = {
       name: name,
       age: age,
@@ -32,8 +30,9 @@ const ApplyForm = () => {
       profession: profession,
       country: country,
     };
+
     try {
-      const response = axios.post(
+      const response = await axios.post(
         "https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-epps/trips/:id/apply",
         apply
       );

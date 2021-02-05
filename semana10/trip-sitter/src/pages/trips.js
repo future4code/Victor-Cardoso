@@ -10,9 +10,11 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import { goToCreateTrip } from "../routes/Coordinator";
+import { goToTripDetails } from "../routes/Coordinator";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import TripDetails from "./tripDetails";
+import PrivateRoute from "../routes/PrivateRoute";
 
 const Trips = () => {
   const history = useHistory();
@@ -24,7 +26,7 @@ const Trips = () => {
         "https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-epps/trips"
       );
       setTrips(response.data.trips);
-      console.log(response.data.trips);
+      // console.log(response.data.trips);
       // return response.data;
     } catch (err) {
       throw new Error(err);
@@ -36,59 +38,66 @@ const Trips = () => {
   }, []);
 
   return (
-    <Flex
-      as="section"
-      h="65vh"
-      w="100%"
-      direction="column"
-      align="center"
-      justify="center"
-    >
-      <Heading>Trips dashboard</Heading>
-      <Button
-        colorScheme="yellowTrip.500"
-        onClick={() => goToCreateTrip(history)}
+    <PrivateRoute>
+      <Flex
+        as="section"
+        h="65vh"
+        w="100%"
+        direction="column"
+        align="center"
+        justify="center"
+        margin="1rem"
       >
-        create trip
-      </Button>
+        <Heading paddingY="1.5rem">Trips dashboard</Heading>
 
-      <Table w="80%">
-        <Thead>
-          <Tr>
-            <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
-              Name
-            </Th>
-            <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
-              Planet
-            </Th>
-            <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
-              Duration
-            </Th>
-            <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
-              Date
-            </Th>
-          </Tr>
-        </Thead>
-        <Tbody>
-          {trips.map((trip) => (
-            <Tr key={trip.id}>
-              <Td fontFamily="Overpass, sans-serif" fontSize="1rem">
-                {trip.name}
-              </Td>
-              <Td fontFamily="Overpass, sans-serif" fontSize="1rem">
-                {trip.planet}
-              </Td>
-              <Td fontFamily="Overpass, sans-serif" fontSize="1rem">
-                {trip.durationInDays} days
-              </Td>
-              <Td fontFamily="Overpass, sans-serif" fontSize="1rem">
-                {trip.date}
-              </Td>
-            </Tr>
-          ))}
-        </Tbody>
-      </Table>
-    </Flex>
+        {trips ? (
+          <Table w="80%">
+            <Thead>
+              <Tr>
+                <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
+                  Name
+                </Th>
+                <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
+                  Planet
+                </Th>
+                <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
+                  Duration
+                </Th>
+                <Th fontFamily="Overpass, sans-serif" fontSize="1rem">
+                  Date
+                </Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {trips.map((trip) => (
+                <Tr key={trip.id}>
+                  <Td fontFamily="Overpass, sans-serif" fontSize="1rem">
+                    <Button
+                      fontFamily="Overpass, sans-serif"
+                      variant="link"
+                      onClick={() => goToTripDetails(history, trip.id)}
+                    >
+                      {trip.name}
+                    </Button>
+                  </Td>
+                  <Td fontFamily="Overpass, sans-serif" fontSize="1rem">
+                    {trip.planet}
+                  </Td>
+                  <Td fontFamily="Overpass, sans-serif" fontSize="1rem">
+                    {trip.durationInDays} days
+                  </Td>
+                  <Td fontFamily="Overpass, sans-serif" fontSize="1rem">
+                    {trip.date}
+                  </Td>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+        ) : (
+          <TripDetails />
+        )}
+      </Flex>
+    </PrivateRoute>
   );
 };
 

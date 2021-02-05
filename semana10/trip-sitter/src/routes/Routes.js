@@ -35,17 +35,17 @@ const Routes = () => {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/signIn">
+          <Route exact path="/signIn">
             <SignIn />
           </Route>
-          <Route path="/signUp">
+          <Route exact path="/signUp">
             <SignUp />
           </Route>
-          <Route path="/tripApply">
+          <Route exact path="/tripApply">
             <TripApply />
           </Route>
           {/* Private Routes */}
-          <Route path="/dashboard/:name">
+          <Route exact path="/dashboard/:name">
             <Dashboard />
           </Route>
           <Route path="/createTrip">
@@ -54,10 +54,10 @@ const Routes = () => {
           <Route path="/applies">
             <Applies />
           </Route>
-          <Route path="/trips">
+          <Route exact path="/trips">
             <Trips />
           </Route>
-          <Route path="/trips/:tripId/details">
+          <Route exact path="/dashboard/:name/:tripId">
             <TripDetails />
           </Route>
           <Route>

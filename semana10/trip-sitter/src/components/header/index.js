@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { Button, Flex, Image } from "@chakra-ui/react";
 
@@ -19,18 +19,12 @@ import {
 const Header = () => {
   const history = useHistory();
 
-  // const [token, setToken] = useState("");
   const token = getToken();
-  console.log(token);
-
-  // useEffect(() => {
-  //   setToken(getToken());
-  //   console.log(token);
-  // }, [token]);
 
   const signOut = (token) => {
     removeToken(token);
     goHome(history);
+    window.location.reload();
   };
 
   return (

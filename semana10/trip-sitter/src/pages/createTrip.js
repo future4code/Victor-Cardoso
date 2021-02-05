@@ -1,16 +1,23 @@
 import React from "react";
-import { Flex } from "@chakra-ui/react";
-import { useAuth } from "../hooks/useAuth";
+import { Flex, Heading } from "@chakra-ui/react";
 import PrivateRoute from "../routes/PrivateRoute";
+import CreateTripForm from "../components/CreateTripForm";
 
 const CreateTrip = () => {
-  // useAuth();
   return (
-    // <PrivateRoute>
-    <Flex as="section" h="65vh">
-      Create Trip
-    </Flex>
-    // </PrivateRoute>
+    <PrivateRoute>
+      <Flex
+        as="section"
+        h="65vh"
+        w="100%"
+        direction="column"
+        justify="center"
+        align="center"
+      >
+        <Heading>Create Trip</Heading>
+        <CreateTripForm />
+      </Flex>
+    </PrivateRoute>
   );
 };
 
