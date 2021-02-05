@@ -4,6 +4,7 @@ import Trips from "./trips";
 import Applies from "./applies";
 
 import { useHistory, useParams } from "react-router-dom";
+import PrivateRoute from "../routes/PrivateRoute";
 
 const Dashboard = () => {
   const history = useHistory();
@@ -20,9 +21,11 @@ const Dashboard = () => {
   });
 
   return (
-    <Flex as="section" h="65vh">
-      {pathParams.name === "applies" ? <Applies /> : <Trips />}
-    </Flex>
+    <PrivateRoute>
+      <Flex as="section" h="65vh">
+        {pathParams.name === "applies" ? <Applies /> : <Trips />}
+      </Flex>
+    </PrivateRoute>
   );
 };
 

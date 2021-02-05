@@ -10,11 +10,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const history = useHistory();
   const { handleSubmit, errors, register } = useForm();
-
-  useEffect(() => {
-    const token = getToken();
-    token && history.push("/dashboard/trips");
-  }, [history]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = () => {
     signInUser();
@@ -25,7 +21,7 @@ const LoginForm = () => {
       email: email,
       password: password,
     };
-
+    setIsLoading(true);
     axios
       .post(
         "https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-epps/login",
@@ -34,13 +30,19 @@ const LoginForm = () => {
       .then((response) => {
         console.log(response.data.token);
         setToken(response.data.token);
+        setIsLoading(false);
         window.location.reload();
-        history.push("/dashboard/trips");
+        // history.push("/dashboard/trips");
       })
       .catch((err) => {
         throw new Error(err);
       });
   };
+
+  useEffect(() => {
+    const token = getToken();
+    token && history.push("/dashboard/trips");
+  }, [history]);
 
   return (
     <Flex h="100%" alignItems="center">
@@ -90,17 +92,21 @@ const LoginForm = () => {
         />
         {errors.password && <span>erro na senha</span>}
 
-        <Button
-          colorScheme="yellowTrip"
-          color="blackTrip.100"
-          fontSize="1.2rem"
-          fontWeight="600"
-          _hover={{ color: "yellowTrip.700", bgColor: "purpleTrip.400" }}
-          _active={{ color: "yellowTrip.500", bgColor: "purpleTrip.200" }}
-          type="submit"
-        >
-          Sign In
-        </Button>
+        {isLoading ? (
+          <Button isLoading></Button>
+        ) : (
+          <Button
+            colorScheme="yellowTrip"
+            color="blackTrip.100"
+            fontSize="1.2rem"
+            fontWeight="600"
+            _hover={{ color: "yellowTrip.700", bgColor: "purpleTrip.400" }}
+            _active={{ color: "yellowTrip.500", bgColor: "purpleTrip.200" }}
+            type="submit"
+          >
+            Sign In
+          </Button>
+        )}
       </Box>
     </Flex>
   );

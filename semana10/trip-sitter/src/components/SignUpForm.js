@@ -62,6 +62,7 @@ const SignUpForm = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Button
+          isLoading
           colorScheme="yellowTrip"
           color="blackTrip.100"
           fontSize="1.2rem"
