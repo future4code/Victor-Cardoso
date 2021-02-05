@@ -11,7 +11,8 @@ const Footer = () => {
   return (
     <Flex as="footer" w="100%" h="15vh" justify="center">
       <Center h="100%" w="100%">
-        {token && (
+        <Heading>Footer</Heading>
+        {/* {token && (
           <Button
             colorScheme="yellowTrip"
             color="blackTrip.100"
@@ -24,7 +25,7 @@ const Footer = () => {
           >
             create trip
           </Button>
-        )}
+        )} */}
       </Center>
     </Flex>
   );

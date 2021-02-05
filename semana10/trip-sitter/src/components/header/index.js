@@ -13,7 +13,7 @@ import {
   goToSignIn,
   goToSignUp,
   goToTrips,
-  goToApplies,
+  goToCreateTrip,
 } from "../../routes/Coordinator";
 
 const Header = () => {
@@ -53,6 +53,18 @@ const Header = () => {
             trips
           </Button>
           <Button
+            colorScheme="yellowTrip"
+            color="blackTrip.100"
+            fontSize="1.2rem"
+            fontWeight="600"
+            padding="1rem"
+            _hover={{ color: "yellowTrip.700", bgColor: "purpleTrip.400" }}
+            _active={{ color: "yellowTrip.500", bgColor: "purpleTrip.200" }}
+            onClick={() => goToCreateTrip(history)}
+          >
+            create trip
+          </Button>
+          {/* <Button
             colorScheme="whiteTrip"
             variant="outline"
             fontWeight="400"
@@ -62,7 +74,7 @@ const Header = () => {
             onClick={() => goToApplies(history)}
           >
             applies
-          </Button>
+          </Button> */}
         </Flex>
       ) : (
         <Flex maxW="30%" w="30%" justify="space-evenly">
