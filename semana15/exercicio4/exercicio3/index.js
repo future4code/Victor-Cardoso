@@ -1,17 +1,20 @@
+const tasks = require("./tasks");
+
 const fs = require("fs");
 
 // Exercício 3
 
-// const addTask = (newTask) => {
-//   // tasks.push(newTask);
-//   // return tasks;
-// };
+const tarefas = ["teste"];
 
-// addTask(process.argv[2]);
-// console.log(tasks);
+const addTask = (newTask) => {
+  console.log(newTask);
+  tarefas.push(newTask);
+  // fs.appendFile("tasks.js", newTask, (err) => {
+  //   if (err) throw err;
+  //   console.log("Item adicionado à lista");
+  // });
+  return tasks;
+};
 
-fs.appendFile("tasks.js", process.argv[2], (err) => {
-  if (err) throw err;
-  // tasks.append(process.argv[2]);
-  console.log("Item adicionado à lista");
-});
+addTask(process.argv[2]);
+console.log(tarefas);
