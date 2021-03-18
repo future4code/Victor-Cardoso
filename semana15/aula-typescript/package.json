@@ -1,0 +1,12 @@
+{
+  "name": "aula-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "ex1": "yarn build && node ./build/ex1.js",
+    "ex2": "yarn build && node ./build/ex2.js",
+    "ex3": "yarn build && node ./build/ex3.js"
+  }
+}
