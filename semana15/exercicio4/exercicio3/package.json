@@ -1,0 +1,14 @@
+{
+  "name": "aula-node-exercicio3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "clear && node ./index.js"
+  },
+  "author": "Victor Cardoso Pudo Torres",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "13.7.7",
+    "typescript": "^3.8.3"
+  }
+}
