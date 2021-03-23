@@ -27,6 +27,6 @@ const server = app.listen(process.env.PORT || 3001, () => {
     const address = server.address() as AddressInfo;
     console.log(`Server is running on port: ${address.port}`);
   } else {
-    console.error(`Failed running server on port: ${process.env.PORT}`)
+    console.error(`Failed running server on port: ${process.env.PORT}`);
   }
 });
