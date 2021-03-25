@@ -1,0 +1,65 @@
+GET http://localhost:3003/actors
+
+###
+
+POST http://localhost:3003/actors/
+Content-Type: application/json
+
+{
+  "id": "008",
+  "name": "Samuel Leroy Jackson",
+  "salary": 420000000,
+  "birth_date": "1948-12-21",
+  "gender": "male"
+}
+
+###
+
+PUT http://localhost:3003/actor/005
+Content-Type: application/json
+
+{
+  "salary": 123456789
+}
+
+###
+
+DELETE http://localhost:3003/actor/003
+
+
+###
+
+PUT http://localhost:3003/actor/005
+Content-Type: application/json
+
+{
+  "salary": 123456789
+}
+
+###
+GET http://localhost:3003/actors/averageSalary
+Content-Type: application/json
+
+{
+  "gender": "female"
+}
+
+###
+GET http://localhost:3003/actor/007
+
+###
+
+GET http://localhost:3003/actor?gender=female
+
+###
+
+PUT http://localhost:3003/actor
+Content-Type: application/json
+
+{
+  "id": "010",
+  "name": "Jennifer Aniston",
+  "salary": 31000000,
+  "birth_date": "1969-02-11",
+  "gender": "female"
+}
