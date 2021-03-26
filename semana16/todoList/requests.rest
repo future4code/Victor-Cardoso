@@ -1,0 +1,8 @@
+PUT http://localhost:3003/user
+Content-Type: application/json
+
+{
+  "name": "Victor Cardoso Pudo Torres",
+  "nickname": "flefs",
+  "email": "cpt.victor@hotmail.com"
+},
