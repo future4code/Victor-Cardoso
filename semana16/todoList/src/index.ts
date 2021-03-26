@@ -2,6 +2,9 @@ import express, { Express } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 import createUser from "./endpoints/create/createUser";
+import getUserById from "./endpoints/getById/getUserById";
+import updateUser from "./endpoints/update/updateUser";
+import createTask from "./endpoints/create/createTask";
 
 // App creation
 const app: Express = express();
@@ -11,10 +14,11 @@ app.use(cors());
 
 // User Routes
 app.put("/user", createUser);
-app.get("/user/:id");
+app.get("/user/:id", getUserById);
+app.post("/user/edit/:id", updateUser);
 
 // Task Routes
-app.put("/task");
+app.put("/task", createTask);
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {

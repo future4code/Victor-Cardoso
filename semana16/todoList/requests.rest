@@ -5,4 +5,32 @@ Content-Type: application/json
   "name": "Victor Cardoso Pudo Torres",
   "nickname": "flefs",
   "email": "cpt.victor@hotmail.com"
-},
+}
+
+
+###
+
+GET http://localhost:3003/user/5
+
+###
+
+POST http://localhost:3003/user/edit/2
+Content-Type: application/json
+
+{
+  "name": "Astro Dev Atualizado",
+  "nickname": "astrodev",
+  "email": "astro@dev.com"
+}
+
+###
+
+PUT http://localhost:3003/task
+Content-Type: application/json
+
+{
+  "title": "Pagar uma cerveja pro bahia",
+  "description": "Se a task cadastrar de primeira, o bahia ganha uma cerveja.",
+  "limitDate": "2021-03-26",
+  "userCreatorId": 1
+}

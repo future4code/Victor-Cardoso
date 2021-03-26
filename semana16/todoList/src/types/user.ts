@@ -1,10 +1,10 @@
 export type User = {
-  id: UserId;
+  id: string;
   name: string;
   nickname: string;
   email: string;
 };
 
-type UserId = {
-  id: string;
-};
+// type UserId = {
+//   id: string;
+// };
