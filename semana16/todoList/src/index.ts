@@ -1,28 +1,26 @@
-import express, { Express } from 'express';
-import dotenv from 'dotenv';
-import knex from 'knex';
-import cors from 'cors';
-import { AddressInfo } from 'net';
+import express, { Express } from "express";
+import cors from "cors";
+import { AddressInfo } from "net";
+import createUser from "./endpoints/create/createUser";
+import getUserById from "./endpoints/getById/getUserById";
+import updateUser from "./endpoints/update/updateUser";
+import createTask from "./endpoints/create/createTask";
 
-dotenv.config();
-
-export const connection = knex({
-  client: "mysql",
-  connection: {
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT || "3306"),
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
-  },
-});
-
+// App creation
 const app: Express = express();
 
 app.use(express.json());
 app.use(cors());
 
-const server = app.listen(process.env.PORT || 3001, () => {
+// User Routes
+app.put("/user", createUser);
+app.get("/user/:id", getUserById);
+app.post("/user/edit/:id", updateUser);
+
+// Task Routes
+app.put("/task", createTask);
+
+const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
     const address = server.address() as AddressInfo;
     console.log(`Server is running on port: ${address.port}`);
