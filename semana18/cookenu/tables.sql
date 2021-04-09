@@ -1,0 +1,8 @@
+CREATE TABLE User (
+	id VARCHAR(64) NOT NULL PRIMARY KEY,
+    userName VARCHAR(32) NOT NULL,
+    email VARCHAR(32) NOT NULL,
+    password VARCHAR(64) NOT NULL
+);
+
+SELECT * FROM User;
